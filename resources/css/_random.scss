@@ -1,0 +1,28 @@
+.color-backdrop {
+  display: inline-block;
+  padding: 12px;
+  margin: 0;
+  background-color: rgba(0, 171, 224, 0.6);
+}
+
+.hoverUnderline a {
+  position: relative;
+  font-size: 1.25em;
+  text-decoration: none; }
+.hoverUnderline a:before {
+  content: '';
+  background: #202130;
+  position: absolute;
+  bottom: -0.1em;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.5475, 0.0085, 0.7678, 0.9508);
+  transform: scaleX(0); }
+.hoverUnderline a:hover:before {
+  visibility: visible;
+  transform: scaleX(1); }
+.hoverUnderline a:hover {
+  cursor: pointer;
+  text-decoration: none; }

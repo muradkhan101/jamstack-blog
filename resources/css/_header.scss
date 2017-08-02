@@ -1,0 +1,192 @@
+nav {
+  font-family: $sans-serifs;
+  color: #202130;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul {
+    width: auto;
+    list-style: none;
+    margin-right: 1.25em;
+    li {
+      display: inline-block;
+      margin: 0 0.75em;
+      a {
+        position: relative;
+        font-size: 1.25em;
+        color: $eggwhite;
+        text-decoration: none;
+      }
+      a:before {
+        content: '';
+        background: $eggwhite;
+        position: absolute;
+        bottom: -0.1em;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        visibility: hidden;
+        transition: all 0.4s $bezier;
+        transform: scaleX(0);
+      }
+      a:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+      a:hover {
+        cursor: pointer;
+        color: $eggwhite;
+        text-decoration: none;
+      }
+    }
+  }
+  .logo-container {
+    img{opacity: 0;}
+    background-image: url('../images/logo.svg');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:auto;
+    height: auto;
+    margin-top: 0.5em;
+    margin-left: 2em;
+  }
+}
+
+#mobile-nav-bar {
+  .logo-container {
+    margin: 0;
+    position: absolute;
+    top: 0.5em;
+    width: 120px;
+    right: calc(50% - 60px);
+  }
+  transition: background-color 0.1s linear 0.3s;
+  padding-top: 0.5em;
+  display: none;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 100%;
+  height: auto;
+  .mobile-menu {
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 1, 1);
+    margin: 1em auto;
+    max-height: 0px;
+    overflow: hidden;
+    ul {
+      transition: all 0.5s $bezier;
+      width: 100%;
+      width: auto;
+      list-style: none;
+      margin: 0 auto;
+      li {
+        display: block;
+        text-align: center;
+        margin: 0.25em auto;
+        a {
+          position: relative;
+          font-size: 1.5em;
+          color: $darkblue;
+          text-decoration: none;
+          &:before {background: $darkblue;}
+        }
+      }
+    }
+  }
+  #menu-holder {
+    margin-left: 1em;
+    .bar1, .bar2, .bar3, .bar4, .bar5 {
+      position: relative;
+      margin: 0 auto;
+      height: 4px;
+      width: 80%;
+      background-color: $eggwhite;
+    }
+    .bar1 {
+      top: calc(30% - 4px);
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition: transform 0.15s $bezier 0.55s, background-color 0.2s $bezier;
+    }
+    .bar2 {
+      top: calc(50% - 8px);
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition: transform 0.15s $bezier 0.4s, background-color 0.2s $bezier;
+    }
+    .bar3 {
+      top: calc(70% - 12px);
+      width: 50%;
+      left: -15%;
+      transform: scaleX(1);
+      transform-origin: left center;
+      transition: transform 0.15s $bezier 0.3s, background-color 0.2s $bezier;
+    }
+    .bar4 {
+      transform-origin: center center;
+      top: calc(50% - 16px);
+      transition: transform 0.2s $bezier, background-color 0.2s $bezier;
+      transform: rotate(45deg) scaleX(0);
+    }
+    .bar5 {
+      transform-origin: center center;
+      top: calc(50% - 20px);
+      transition: transform 0.2s $bezier 0.1s, background-color 0.2s $bezier;
+      transform: rotate(-45deg) scaleX(0);
+    }
+  }
+  &.is-open {
+    background-color: $eggwhite;
+    transition: background-color 0.15s linear;
+    .mobile-menu {
+      max-height: 135px;
+    }
+    #menu-holder {
+      .bar1, .bar2, .bar3, .bar4, .bar5 {background-color: $darkblue;}
+      .bar1 {
+        transform:  scaleX(0);
+        transition: transform 0.15s $bezier, background-color 0.2s $bezier;
+      }
+      .bar2 {
+        transform: scaleX(0);
+        transition: transform 0.15s $bezier 0.1s, background-color 0.2s $bezier;
+      }
+      .bar3 {
+        transform: scaleX(0);
+        transition: transform 0.15s $bezier 0.25s, background-color 0.2s $bezier;
+      }
+      .bar4 {
+        transform: rotate(45deg) scaleX(1);
+        transition: transform 0.2s $bezier 0.5s, background-color 0.2s $bezier;
+
+      }
+      .bar5 {
+        transform: rotate(-45deg) scaleX(1);
+        transition: transform 0.2s $bezier 0.4s, background-color 0.2s $bezier;
+      }
+    }
+  }
+  #menu-holder {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    position: relative;
+  }
+  .mobile-social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5px;
+    .social-media-img {
+      width: 35px;
+      margin: 0 5px;
+    }
+  }
+}
+@media (max-width: 680px) {
+  #nav-bar, #social-media-container {display: none !important;}
+  #mobile-nav-bar {display: flex;}
+}

@@ -1,0 +1,33 @@
+body {
+  line-height: 1.2;
+  background-color: $darkblue;
+  font-family: $sans-serifs;
+  font-size: 12pt;
+  color: $eggwhite;
+}
+img {
+  width: 100%;
+  max-width: inherit;
+}
+h1 {
+  font-size: 3.5em;
+  font-weight: $heavy;
+}
+h2 {
+  font-size: 2em;
+  font-weight: $bold;
+  font-family: $sans-serifs;
+}
+h3 {
+  font-size: 2em;
+  font-family: $sans-serifs;
+}
+h4 {
+  font-size: 1.5em;
+  font-family: $serifs;
+}
+article {
+  font-size: 1em;
+  font-family: $serifs;
+}
+p {font-family: $serifs; font-size: 1em;}
