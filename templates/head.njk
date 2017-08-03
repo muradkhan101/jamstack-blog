@@ -1,0 +1,22 @@
+{% block head %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+
+  {% if home %}
+    <title> Blog Title </title>
+  {% elseif post %}
+    <title> {{ post.title }} - Blog Title </title>
+    <meta name="author" content="{{ post.author.name }}"">
+  {% endif %}
+
+  <script src='../resources/js/masonry-min.js'></script>
+  <script src='../resources/js/main.js'></script>
+  <meta name="description" content="A blog about just about anything (but mostly programming">
+  <meta name="keywords" content="data science, programming, front-end, back-end, html, css, javascript, js">
+  <link rel="stylesheet" href="../resources/css/main.css">
+  <link rel="shortcut icon" href="../resources/images/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,700|Lora" rel="stylesheet">
+</head>
+{% endblock %}

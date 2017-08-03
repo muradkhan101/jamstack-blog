@@ -1,0 +1,21 @@
+{{ import "head.njk" }}
+
+{{ import "navigation.njk" }}
+
+{{ import "macros.njk" }}
+
+<div id="content-container" class="flex-row">
+    {{ import "social-sidebar.njk" }}
+
+    <div class="post-title">
+        {{ post.title }}
+    </div>
+
+    <div class="post-content">
+        {{ post.content }}
+    </div>
+
+    {{ import "author-sidebar.njk" }}
+</div>
+
+{{ import "footer.njk" }}
