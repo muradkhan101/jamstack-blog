@@ -1,0 +1,53 @@
+{% extends "home.njk" %}
+{% extends "navigation.njk" %}
+{% extends "footer.njk" %}
+
+{% macro loopThroughPosts(posts, func) %}
+    {% for post in posts %}
+    {% func(post) %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro makePostSummary(post) %}
+    <div class="grid-item">
+        <div class="post-title">
+            <h3>{{ post.title }}</h3>
+        </div>
+        <div class="post-summary">
+            <p>{{ post.summary }}</p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% block head %}
+{{ super() }}
+<title>home.title</title>
+{% endblock %}
+
+{% block navigation scoped %}
+{{ super() }}
+{% endblock %}
+<main>
+    <!-- For front page, have pictures with hover effects like in Projects of current site
+     Post title in top, excerpt in bottom. JS function to cut excerpt w/ ... to fit in
+     Placement of image in recent Articles section could be positioned w/ sin function
+     In header, maybe use random image API to get new one every day (Unsplash.com api)
+     Can do image thing with posts to but use post category as search term for new img
+     Crazier idea for front, edge detection alg that place title along edge in picture
+     Parallax on blog title so it touches nav bar as it leaves the screen, JS function -->
+    <h1> Recent Articles </h1>
+    <div class="flex-row container">
+        <div class="masonry-grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer-48", "percentPosition": "true"}'>
+            <div class="grid-sizer-48"></div>
+            {% if recentPosts %}
+            {% loopThroughPosts(recentPosts, makePostSummary) %}
+            {% else %}
+            <h3>Sorry, no posts were found :(</h3>
+            {% endif %}
+        </div>
+        {% block sidebar %}
+        {% endblock %}
+    </div>
+</main>
+{% block footer %}
+{% endblock %}

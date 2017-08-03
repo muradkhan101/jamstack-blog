@@ -1,0 +1,9 @@
+{{ extends "head.njk" }}
+{{ extends "navigation.njk" }}
+{{ extends "footer.njk" }}
+
+{{ block head }}
+{{ super() }}
+<title>{{ post.title }} - Blog Name</title>
+<meta name="author" content="{{ post.author }}">
+{{ endblock }}

@@ -1,0 +1,23 @@
+{% macro navList(options, class='') %}
+    <ul class='{{ class }}'>
+    {% for link in options %}
+        <li><a href='{{ link.href }}'>{{ link.title }}</a></li>
+    {% endfor %}
+{% endmacro %}
+
+{% macro makePostSummary(post) %}
+    <div class="grid-item">
+        <div class="post-title">
+            <h3>{{ post.title }}</h3>
+        </div>
+        <div class="post-summary">
+            <p>{{ post.summary }}</p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro loopThroughPosts(posts, func) %}
+    {% for post in posts %}
+    {% func(post) %}
+    {% endfor %}
+{% endmacro %}
