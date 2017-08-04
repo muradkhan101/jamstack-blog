@@ -1,10 +1,12 @@
+// MB03 - Header
+
 nav {
   font-family: $sans-serifs;
-  color: #202130;
+  color: $eggwhite;
   height: auto;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   ul {
     width: auto;
@@ -189,4 +191,9 @@ nav {
 @media (max-width: 680px) {
   #nav-bar, #social-media-container {display: none !important;}
   #mobile-nav-bar {display: flex;}
+}
+
+#landing-navigation {
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 2px solid $softred;
 }

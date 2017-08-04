@@ -1,0 +1,7 @@
+<div class="sidebar sidebar-left" id="social-media>
+    {$ for site in page.author.socialMedia %}
+        <div class="social-icon">
+            <a href="{{ site.link }}"> <img src="{{ site.icon }}" alt="Link to {{ page.author.name }}'s {{ site.name }}' </a>
+        </div>
+    <% endfor %}
+</div>

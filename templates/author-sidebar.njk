@@ -1,3 +1,11 @@
-<div class="sidebar sidebar-left" id="author-info>
-    <div
+<div class="sidebar sidebar-right" id="author-info">
+    <div class="author-image">
+        <img src="{{ post.author.image }}" alt="Picture of author, {{ post.author.name }}">
+    </div>
+    <div class="author-name">
+        <h3> {{post.author.name}} </h3>
+    </div>
+    <div class="author-biography">
+        <p> {{ post.author.biography}} </p>
+    </div>
 </div>

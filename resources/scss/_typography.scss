@@ -1,9 +1,10 @@
+// MB02 - Typography.scss
+body, img, h1, h2, h3, h4,
+h5, h6, p, article, textarea,
+label, code {line-height: 1.2;}
 body {
-  line-height: 1.2;
-  background-color: $darkblue;
   font-family: $sans-serifs;
   font-size: 12pt;
-  color: $eggwhite;
 }
 img {
   width: 100%;
@@ -12,9 +13,10 @@ img {
 h1 {
   font-size: 3.5em;
   font-weight: $heavy;
+  font-family: $sans-serifs;
 }
 h2 {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: $bold;
   font-family: $sans-serifs;
 }
@@ -24,10 +26,12 @@ h3 {
 }
 h4 {
   font-size: 1.5em;
-  font-family: $serifs;
+  font-family: $sans-serifs;
 }
-article {
+p, blockquote, article {
+  font-family: $serifs;
   font-size: 1em;
-  font-family: $serifs;
 }
-p {font-family: $serifs; font-size: 1em;}
+.indent-text {
+  padding-left: 10px;
+}

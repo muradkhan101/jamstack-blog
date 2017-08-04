@@ -1,0 +1,32 @@
+// MB04 - Core.scss
+
+.post {
+  &:hover {
+    .post-title, .post-summary {
+      background-color: rgba(20, 20, 20, 0.6);
+      transform: translateX(0);
+    }
+  }
+}
+.post-link {
+  display: inline-block;
+  overflow: hidden;
+}
+.post-title, .post-summary {
+  padding: 3px 5px;
+  background-color: rgba(0, 0, 0, 0);
+  &:nth-child(odd) {
+    transform: translateX(-100%);
+  }
+  &:nth-child(even) {
+    transform: translateX(100%);
+  }
+}
+.post-title {
+  &:nth-child(odd) {
+    color: $skyblue;
+  }
+  &:nth-child(even) {
+    color: $softred;
+  }
+}
