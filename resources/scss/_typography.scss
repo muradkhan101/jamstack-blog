@@ -22,11 +22,21 @@ h2 {
 }
 h3 {
   font-size: 2em;
+  font-weight: $bold;
   font-family: $sans-serifs;
 }
 h4 {
-  font-size: 1.5em;
+  font-size: 2em;
   font-family: $sans-serifs;
+}
+h5 {
+  font-size: 1em;
+  font-weight: $bold;
+  font-family: $sans-serifs;
+}
+h6 {
+  font-size: 1.5em;
+  font-family: $serifs;
 }
 p, blockquote, article {
   font-family: $serifs;

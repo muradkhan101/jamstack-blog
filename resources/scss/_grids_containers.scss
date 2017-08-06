@@ -1,4 +1,4 @@
-// MB06 - grids.scss
+// MB07 - grids_containers.scss
 
 //CSS Grid
 
@@ -33,9 +33,35 @@
 
 //Masonry
 
-.masonry-grid {
+.home-masonry-grid {
+  order: 1;
   width: 70%;
 }
-.grid-sizer-48, .grid-item {
-  width: calc(50%-5px);
+
+//.css-masonry-grid {
+//  display: flex;
+//  flex-direction: row;
+//  flex-wrap: wrap;
+//  justify-content: space-between;
+//}
+.grid-sizer, .grid-item {
+  width: calc(100%/3 - 10px);
+  margin-bottom: 15px;
+}
+
+// Containers
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.main-container {
+  padding: 5px 8px;
+}
+.container {
+  flex-grow: 5;
+  order: 1;
 }

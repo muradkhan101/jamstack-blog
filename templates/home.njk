@@ -4,7 +4,7 @@
 
 {% import "macros.njk" %}
 
-<main>
+<main style="overflow: hidden;">
     <!-- For front page, have pictures with hover effects like in Projects of current site
      Post title in top, excerpt in bottom. JS function to cut excerpt w/ ... to fit in
      Placement of image in recent Articles section could be positioned w/ sin function
@@ -12,18 +12,18 @@
      Can do image thing with posts to but use post category as search term for new img
      Crazier idea for front, edge detection alg that place title along edge in picture
      Parallax on blog title so it touches nav bar as it leaves the screen, JS function -->
-    <h1> Recent Articles </h1>
-    <div class="flex-row container">
-        <div class="masonry-grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": ".grid-sizer-48", "percentPosition": "true"}'>
-            <div class="grid-sizer-48"></div>
-            {% if recentPosts %}
-            {% loopThroughPosts(recentPosts, makePostSummary) %}
-            {% else %}
-            <h3>Sorry, no posts were found :(</h3>
-            {% endif %}
+    <div class="main-container">
+        <h1> Recent Articles </h1>
+        <div class="flex-row">
+            <div class="home-masonry-grid">
+                {% if recentPosts %}
+                {% loopThroughPosts(recentPosts, makePostSummary) %}
+                {% else %}
+                <h3>Sorry, no posts were found :(</h3>
+                {% endif %}
+            </div>
+            {% import "sidebar.njk" %}
         </div>
-        {% block sidebar %}
-        {% endblock %}
     </div>
 </main>
 </body>

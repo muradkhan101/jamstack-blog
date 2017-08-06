@@ -1,14 +1,20 @@
-// MB00 - variables.scss
+// MB00A - variables.scss
 
 $sans-serifs: 'Libre Franklin', Helvetica, 'Franklin Gothic', sans-serif;
 $serifs:  'Lora', Baskerville, serif;
-$eggwhite: #efefef;
-$darkblue: #202130;
-$softred: #d16666;
-$skyblue: #00ade0;
-$navyish: #2c4251;
 $heavy: 700;
 $bold: 600;
-$drop-shadow: 2px 0px 4px rgba(0,0,0,0.5), -2px 0px 4px rgba(0,0,0,0.5),
-0px -2px 4px rgba(0,0,0,0.5), 0px 2px 4px rgba(0,0,0,0.5);
+$drop-shadow: 2px 0px 4px rgba(0,0,0,0.3), -2px 0px 4px rgba(0,0,0,0.3),
+0px -2px 4px rgba(0,0,0,0.3), 0px 2px 4px rgba(0,0,0,0.3);
 $bezier: cubic-bezier(0.5475, 0.0085, 0.7678, 0.9508);
+
+// Colors
+$navyish: #2c4251;
+$darkblue: #263238;
+$skyblue: #03A9F4;
+$lightblue: #B3E5FC;
+
+$eggwhite: #efefef;
+$softred: #FF5252;
+$softerred: #FF8A80;
+

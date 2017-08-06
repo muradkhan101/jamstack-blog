@@ -1,6 +1,8 @@
-// MB04 - Core.scss
+// MB01 - Core.scss
+body {background-color: $eggwhite;}
 
 .post {
+  transition: all 0.4s $bezier;
   &:hover {
     .post-title, .post-summary {
       background-color: rgba(20, 20, 20, 0.6);
@@ -11,22 +13,35 @@
 .post-link {
   display: inline-block;
   overflow: hidden;
+  text-decoration: none;
+  color: $eggwhite;
 }
 .post-title, .post-summary {
-  padding: 3px 5px;
+  transition: inherit;
   background-color: rgba(0, 0, 0, 0);
   &:nth-child(odd) {
     transform: translateX(-100%);
   }
   &:nth-child(even) {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 }
 .post-title {
-  &:nth-child(odd) {
-    color: $skyblue;
+  padding: 15px 5px 4px 5px;
+}
+.post-summary {
+  padding: 4px 5px 15px 5px;
+}
+
+.grid-item {
+  &:nth-child(even) {
+    .post-title {
+      color: $skyblue;
+    }
   }
   &:nth-child(even) {
-    color: $softred;
+    .post-title {
+      color: $softred;
+    }
   }
 }

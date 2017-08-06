@@ -1,0 +1,30 @@
+//MB06 - Sidebar.scss
+.sidebar {
+  position: relative;
+  z-index: 0;
+  margin: 0 10px;
+  width: 30%;
+  order: 3;
+  .sidebar-container {
+    padding: 5px 3px;
+    position: relative;
+    position: sticky;
+    top: 20px;
+    box-shadow: $drop-shadow;
+  }
+}
+
+.sidebar-right {
+  flex-grow: 2;
+  order: 100;
+  .sidebar-container {
+    background-color: $lightblue;
+  }
+}
+.sidebar-left {
+  flex-grow: 1;
+  order: -1;
+  .sidebar-container {
+    background-color: $softerred;
+  }
+}

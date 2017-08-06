@@ -1,9 +1,10 @@
 @import 'variables';
+@import 'reset';
+@import 'core';
 @import 'typography';
 @import 'header';
 @import 'footer';
-@import 'core';
-@import 'footer';
+@import 'sidebar';
 @import 'inputs';
-@import 'grids';
+@import 'grids_containers';
 @import 'random';
