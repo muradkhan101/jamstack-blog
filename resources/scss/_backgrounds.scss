@@ -1,0 +1,38 @@
+// MB08 - Backgrounds.scss
+
+.background-square-full {
+  background-size: 150px;
+  background-image: url('../images/square-full.svg');
+}
+.background-square-med {
+  background-size: 150px;
+  background-image: url('../images/square-med.svg');
+}
+.background-square-bare {
+  background-size: 150px;
+  background-image: url('../images/square-bare.svg');
+}
+.background-triangle-full {
+  background-size: 50px;
+  background-image: url('../images/triangle-full.svg');
+}
+.background-triangle-med {
+  background-size: 50px;
+  background-image: url('../images/triangle-med.svg');
+}
+.background-triangle-bare {
+  background-size: 50px;
+  background-image: url('../images/triangle-bare.svg');
+}
+.background-star-full {
+  background-image: url('../images/star-full.svg');
+  background-size: 50px;
+}
+.background-star-med {
+  background-size: 50px;
+  background-image: url('../images/star-med.svg');
+}
+.background-star-bare {
+  background-size: 50px;
+  background-image: url('../images/star-bare.svg');
+}

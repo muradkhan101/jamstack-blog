@@ -6,7 +6,7 @@
   width: 30%;
   order: 3;
   .sidebar-container {
-    padding: 5px 3px;
+    padding: 2% 4% 2% 2%;
     position: relative;
     position: sticky;
     top: 20px;
@@ -27,4 +27,10 @@
   .sidebar-container {
     background-color: $softerred;
   }
+}
+.author-image {
+  margin-bottom: 0.5em;
+}
+.author-info {
+  margin-left: 0.5em;
 }

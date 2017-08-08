@@ -1,1 +1,20 @@
 //MB04 - Footer.scss
+
+#footer-content {
+  padding: 50px 20px;
+  font-size: 10px;
+  color: $eggwhite;
+  background-color: $charcoal;
+}
+#footer-links{
+  border-right: 2px solid $skyblue;
+}
+footer nav ul li {
+  text-align: right;
+}
+#footer-text {
+  padding-left: 2em;
+  width: 80%;
+  max-width: 700px;
+  justify-content: space-between;
+}

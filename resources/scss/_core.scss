@@ -1,5 +1,14 @@
 // MB01 - Core.scss
-body {background-color: $eggwhite;}
+body {
+  background-color: $eggwhite;
+  color: $charcoal;
+}
+
+main {
+  overflow: hidden;
+  background-size: 250px 250px;
+  padding: 300px 3% 0 3%;
+}
 
 .post {
   transition: all 0.4s $bezier;
@@ -15,6 +24,7 @@ body {background-color: $eggwhite;}
   overflow: hidden;
   text-decoration: none;
   color: $eggwhite;
+  box-shadow: $drop-shadow-small;
 }
 .post-title, .post-summary {
   transition: inherit;
@@ -34,7 +44,7 @@ body {background-color: $eggwhite;}
 }
 
 .grid-item {
-  &:nth-child(even) {
+  &:nth-child(odd) {
     .post-title {
       color: $skyblue;
     }

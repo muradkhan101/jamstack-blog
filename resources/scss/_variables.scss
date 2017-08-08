@@ -6,6 +6,8 @@ $heavy: 700;
 $bold: 600;
 $drop-shadow: 2px 0px 4px rgba(0,0,0,0.3), -2px 0px 4px rgba(0,0,0,0.3),
 0px -2px 4px rgba(0,0,0,0.3), 0px 2px 4px rgba(0,0,0,0.3);
+$drop-shadow-small: 1px 0px 1px rgba(0,0,0,0.3), -1px 0px 1px rgba(0,0,0,0.3),
+0px -1px 1px rgba(0,0,0,0.3), 0px 1px 1px rgba(0,0,0,0.3);
 $bezier: cubic-bezier(0.5475, 0.0085, 0.7678, 0.9508);
 
 // Colors
@@ -15,6 +17,8 @@ $skyblue: #03A9F4;
 $lightblue: #B3E5FC;
 
 $eggwhite: #efefef;
+$charcoal: #313131;
+
 $softred: #FF5252;
 $softerred: #FF8A80;
 
