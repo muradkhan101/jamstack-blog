@@ -10,6 +10,10 @@ main {
   padding: 300px 3% 0 3%;
 }
 
+#content-container {
+  padding: 0 35px;
+}
+
 .post {
   transition: all 0.4s $bezier;
   &:hover {
@@ -54,4 +58,13 @@ main {
       color: $softred;
     }
   }
+}
+.social-links {
+  display: flex;
+  justify-content: end;
+  padding-top: 1em;
+}
+.social-media-img {
+  margin-left: 0.5em;
+  height: 2em;
 }

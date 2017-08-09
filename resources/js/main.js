@@ -1,13 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     //Masonry initialization
-    masonry = new Masonry('.home-masonry-grid', {
-        itemSelector: ".grid-item",
-        columnWidth: ".grid-sizer",
-        percentPosition: "true",
-        gutter: 10
-    })
+    if (document.querySelector('.home-masonry-grid')) {
+        masonry = new Masonry('.home-masonry-grid', {
+            itemSelector: ".grid-item",
+            columnWidth: ".grid-sizer",
+            percentPosition: "true",
+            gutter: 10
+        })
+        masonry.layout();
+    }
 
-    masonry.layout();
 
     // Parallax initialization
     scrollHolder = new ParallaxScrollHolder('.parallax');
@@ -61,4 +63,10 @@ ParallaxScrollHolder.prototype.updateAll = function() {
     })
 }
 
-//Could add container class to start scroll with could let you choose the name for your selector
+document.getElementById('burger-holder').addEventListener('click', function() {
+    document.getElementById('mobile-nav-bar').classList.toggle('is-open');
+})
+
+// Make JS so sidebars appear as you scroll down. Not like a breakpoint thing though.
+// They should move into place as you scroll. In other words, their position is scroll dependent.
+// Could do a thing with JS where you randomly selected points in SVG and colorize them on scroll

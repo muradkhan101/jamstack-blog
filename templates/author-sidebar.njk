@@ -1,9 +1,9 @@
 <div class="sidebar sidebar-right" id="author-info">
-    <div class="sidebar-container flex-row">
+    <div class="sidebar-container flex-col">
         <div class="author-image">
             <img src="{{ post.author.image }}" alt="Picture of author, {{ post.author.name }}">
         </div>
-        <div class="author-info flex-col">
+        <div class="author-info">
             <div class="author-name">
                 <h3> {{post.author.name}} </h3>
             </div>
@@ -12,4 +12,5 @@
             </div>
         </div>
     </div>
+    <div class="column-to-top-red"></div>
 </div>

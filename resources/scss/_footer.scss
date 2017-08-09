@@ -8,9 +8,16 @@
 }
 #footer-links{
   border-right: 2px solid $skyblue;
+  padding-right: 1.25em;
 }
-footer nav ul li {
-  text-align: right;
+footer nav {
+  justify-content: right;
+  ul {
+    margin-right: 0;
+    li {
+      text-align: right;
+    }
+  }
 }
 #footer-text {
   padding-left: 2em;

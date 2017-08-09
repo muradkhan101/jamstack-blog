@@ -49,9 +49,26 @@
     background: $softred;
   }
 }
+.column-to-top-blue {
+  width: 100%;
+  position: relative;
+  height: 0px;
+  &::before {
+    content:'';
+    position: absolute;
+    height: 5000px;
+    left: 50%;
+    top: -1000px;
+    width: 2px;
+    z-index: -1000;
+    background: $skyblue;
+  }
+}
 .parallax {
   background-position: 0 0;
 }
-.spacer {
-  height: 250px;
+.spacer-image {
+  height: 500px;
+  width: 100%;
+  background-size: cover;
 }

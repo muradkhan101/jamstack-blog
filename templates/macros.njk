@@ -5,17 +5,19 @@
     {% endfor %}
 {% endmacro %}
 
-{% macro makePostSummary(post) %}
-    <a class="grid-item post-link" href="{{ post.link }}">
-        <div class="post cover-image" style="background-image: url('https://source.unsplash.com/featured/?{% post.category[0] %}');">
-            <div class="post-title">
-                <h3>{{ post.title }}</h3>
+{% macro makePostSummaries(posts) %}
+    {% for post in posts %}
+        <a class="grid-item post-link" href="{{ post.link }}">
+            <div class="post cover-image" style="background-image: url('https://source.unsplash.com/featured/?{% post.category[0] %}');">
+                <div class="post-title">
+                    <h3>{{ post.title }}</h3>
+                </div>
+                <div class="post-summary">
+                    <p>{{ post.summary }}</p>
+                </div>
             </div>
-            <div class="post-summary">
-                <p>{{ post.summary }}</p>
-            </div>
-        </div>
-    </a>
+        </a>
+    {% endfor %}
 {% endmacro %}
 
 {% macro loopThroughPosts(posts, func) %}
@@ -24,4 +26,15 @@
     {% endfor %}
 {% endmacro %}
 
-{% macro makeUnsplashImage
+
+{% macro makeSocialMediaLinks(sites) %}
+    {% for site in sites %}
+        <a href='{% site.url %}'>
+            <img src='{% site.icon %}' class='social-media-img' alt='Link to my {% site.name %}'></img>
+        </a>
+    {% endfor %}
+{% endmacro %}
+
+{% macro makeUnsplashImage() %}
+
+{% endmacro %}

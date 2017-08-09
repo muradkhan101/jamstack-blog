@@ -64,6 +64,7 @@ nav {
     width: 120px;
     right: calc(50% - 60px);
   }
+  background: $charcoal;
   transition: background-color 0.1s linear 0.3s;
   padding-top: 0.5em;
   display: none;
@@ -96,7 +97,7 @@ nav {
       }
     }
   }
-  #menu-holder {
+  #burger-holder {
     margin-left: 1em;
     .bar1, .bar2, .bar3, .bar4, .bar5 {
       position: relative;
@@ -144,7 +145,7 @@ nav {
     .mobile-menu {
       max-height: 135px;
     }
-    #menu-holder {
+    #burger-holder {
       .bar1, .bar2, .bar3, .bar4, .bar5 {background-color: $darkblue;}
       .bar1 {
         transform:  scaleX(0);
@@ -169,7 +170,7 @@ nav {
       }
     }
   }
-  #menu-holder {
+  #burger-holder {
     width: 60px;
     height: 60px;
     background-color: transparent;
@@ -196,4 +197,11 @@ nav {
   background: rgba(0, 0, 0, 0.6);
   border-bottom: 2px solid $softred;
   max-height: 95px;
+}
+#nav-bar {
+  position: absolute;
+  background: rgba(0,0,0,0.4);
+  border-bottom: 2px solid transparentize($softred, 0.4);
+  height: 4em;
+  justify-content: right;
 }

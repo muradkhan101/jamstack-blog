@@ -17,7 +17,7 @@
         <div class="flex-row">
             <div class="home-masonry-grid">
                 {% if recentPosts %}
-                {% loopThroughPosts(recentPosts, makePostSummary) %}
+                {% makePostSummaries(recentPosts) %}
                 {% else %}
                 <h3>Sorry, no posts were found :(</h3>
                 {% endif %}
