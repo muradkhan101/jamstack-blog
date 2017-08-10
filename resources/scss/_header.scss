@@ -57,6 +57,15 @@ nav {
 }
 
 #mobile-nav-bar {
+  background: $charcoal;
+  transition: background-color 0.1s linear 0.3s;
+  padding-top: 0.5em;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 100%;
+  min-height: 5em;
   .logo-container {
     margin: 0;
     position: absolute;
@@ -64,19 +73,20 @@ nav {
     width: 120px;
     right: calc(50% - 60px);
   }
-  background: $charcoal;
-  transition: background-color 0.1s linear 0.3s;
-  padding-top: 0.5em;
-  display: none;
-  justify-content: flex-start;
-  align-items: baseline;
-  width: 100%;
-  height: auto;
+  .site-name {
+    color: $eggwhite;
+    transition: color 0.1s linear 0.3s;
+    position: absolute;
+    top: 38px;
+    right: 1em;
+    h2 {margin: 0; line-height: 0;}
+  }
   .mobile-menu {
-    transition: max-height 0.3s cubic-bezier(0.4, 0, 1, 1);
-    margin: 1em auto;
+    transition: max-height 0.3s cubic-bezier(0, 0.73, 1, 1);
+    margin: 50px auto 10px;
     max-height: 0px;
     overflow: hidden;
+    position: relative;
     ul {
       transition: all 0.5s $bezier;
       width: 100%;
@@ -90,15 +100,19 @@ nav {
         a {
           position: relative;
           font-size: 1.5em;
-          color: $darkblue;
+          color: $charcoal;
           text-decoration: none;
-          &:before {background: $darkblue;}
+          &:before {background: $charcoal;}
         }
       }
     }
   }
   #burger-holder {
     margin-left: 1em;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
     .bar1, .bar2, .bar3, .bar4, .bar5 {
       position: relative;
       margin: 0 auto;
@@ -107,19 +121,19 @@ nav {
       background-color: $eggwhite;
     }
     .bar1 {
-      top: calc(30% - 4px);
+      top: 20px;
       transform: scaleX(1);
       transform-origin: left center;
       transition: transform 0.15s $bezier 0.55s, background-color 0.2s $bezier;
     }
     .bar2 {
-      top: calc(50% - 8px);
+      top: 28px;
       transform: scaleX(1);
       transform-origin: left center;
       transition: transform 0.15s $bezier 0.4s, background-color 0.2s $bezier;
     }
     .bar3 {
-      top: calc(70% - 12px);
+      top: 36px;
       width: 50%;
       left: -15%;
       transform: scaleX(1);
@@ -128,13 +142,13 @@ nav {
     }
     .bar4 {
       transform-origin: center center;
-      top: calc(50% - 16px);
+      top: 18px;
       transition: transform 0.2s $bezier, background-color 0.2s $bezier;
       transform: rotate(45deg) scaleX(0);
     }
     .bar5 {
       transform-origin: center center;
-      top: calc(50% - 20px);
+      top: 14px;
       transition: transform 0.2s $bezier 0.1s, background-color 0.2s $bezier;
       transform: rotate(-45deg) scaleX(0);
     }
@@ -143,7 +157,11 @@ nav {
     background-color: $eggwhite;
     transition: background-color 0.15s linear;
     .mobile-menu {
-      max-height: 135px;
+      max-height: 170px;
+    }
+    .site-name {
+      color: $charcoal;
+      transition: color 0.15s linear;
     }
     #burger-holder {
       .bar1, .bar2, .bar3, .bar4, .bar5 {background-color: $darkblue;}
@@ -169,12 +187,6 @@ nav {
         transition: transform 0.2s $bezier 0.4s, background-color 0.2s $bezier;
       }
     }
-  }
-  #burger-holder {
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    position: relative;
   }
   .mobile-social-media {
     display: flex;

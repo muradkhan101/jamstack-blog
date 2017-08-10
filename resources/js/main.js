@@ -14,7 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Parallax initialization
     scrollHolder = new ParallaxScrollHolder('.parallax');
     scrollHolder.start();
-    window.addEventListener('resize', scrollHolder.updateAll);
+    window.addEventListener('resize', function(){scrollHolder.updateAll});
+
+    // Burger menu listener
+    document.getElementById('burger-holder').addEventListener('click', function() {
+        document.getElementById('mobile-nav-bar').classList.toggle('is-open');
+    })
 })
 var masonry;
 var scrollHolder;
@@ -62,10 +67,6 @@ ParallaxScrollHolder.prototype.updateAll = function() {
         el.update();
     })
 }
-
-document.getElementById('burger-holder').addEventListener('click', function() {
-    document.getElementById('mobile-nav-bar').classList.toggle('is-open');
-})
 
 // Make JS so sidebars appear as you scroll down. Not like a breakpoint thing though.
 // They should move into place as you scroll. In other words, their position is scroll dependent.
