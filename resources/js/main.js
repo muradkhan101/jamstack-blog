@@ -20,7 +20,40 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('burger-holder').addEventListener('click', function() {
         document.getElementById('mobile-nav-bar').classList.toggle('is-open');
     })
+    // Start Nav Bar scroll listener
+    if (document.getElementById('mobile-nav-bar') || document.getElementById('nav-bar')) {
+        document.addEventListener('scroll', function(){userScrolled = true;})
+        navbarHeight = document.getElementById('mobile-nav-bar').clientHeight;
+        navBars = [document.getElementById('mobile-nav-bar'), document.getElementById('nav-bar')];
+        setInterval(function () {
+            if (userScrolled) {
+                hasScrolled();
+                userScrolled = false;
+            }
+        }, 250);
+    }
 })
+// Hide/show Nav Bar with scroll
+var userScrolled;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight;
+var navBars;
+
+function hasScrolled() {
+    var scrollPos = window.pageYOffset;
+    if (Math.abs(lastScrollTop - scrollPos) <= delta)
+        return;
+    if (scrollPos > lastScrollTop && scrollPos > navbarHeight){
+        navBars.forEach(function(el){el.classList.add('nav-hidden')})
+    } else {
+        if(scrollPos + window.innerHeight < document.body.scrollHeight) {
+            navBars.forEach(function(el){el.classList.remove('nav-hidden')})
+        }
+    }
+    lastScrollTop = scrollPos;
+}
+
 var masonry;
 var scrollHolder;
 function ParallaxScroll(el) {

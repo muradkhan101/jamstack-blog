@@ -38,12 +38,6 @@
   width: 70%;
 }
 
-//.css-masonry-grid {
-//  display: flex;
-//  flex-direction: row;
-//  flex-wrap: wrap;
-//  justify-content: space-between;
-//}
 .grid-sizer, .grid-item {
   width: calc(100%/3 - 10px);
   margin-bottom: 15px;
@@ -65,4 +59,17 @@
 .container {
   flex-grow: 5;
   order: 1;
+}
+#mobile-info-bar {
+  margin-top: 50px;
+  display: none;
+}
+
+//Media Queries
+
+@media (max-width: 860px) {
+  .home-masonry-grid {width: 100%;}
+  .sidebar {display: none;}
+  #mobile-info-bar {display: block;}
+  .main-container {display: flex; flex-direction: column;}
 }

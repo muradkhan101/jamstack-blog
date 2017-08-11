@@ -58,7 +58,7 @@ nav {
 
 #mobile-nav-bar {
   background: $charcoal;
-  transition: background-color 0.1s linear 0.3s;
+  transition: background-color 0.1s linear 0.3s, top 0.25s $bezier;
   padding-top: 0.5em;
   display: none;
   flex-direction: column;
@@ -66,6 +66,7 @@ nav {
   align-items: baseline;
   width: 100%;
   min-height: 5em;
+  position: fixed;
   .logo-container {
     margin: 0;
     position: absolute;
@@ -211,9 +212,14 @@ nav {
   max-height: 95px;
 }
 #nav-bar {
-  position: absolute;
+  position: fixed;
   background: rgba(0,0,0,0.4);
   border-bottom: 2px solid transparentize($softred, 0.4);
-  height: 4em;
+  height: 5em;
   justify-content: right;
+  transition: top 0.25s $bezier;
+}
+
+.nav-hidden {
+  top: -5em;
 }
