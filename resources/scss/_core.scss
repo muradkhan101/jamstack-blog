@@ -59,6 +59,12 @@ main {
     }
   }
 }
+.author-image, .author-info {
+  padding: 6px 8px;
+}
+.author-name {
+  margin-bottom: 0.5em;
+}
 .social-links {
   display: flex;
   justify-content: end;

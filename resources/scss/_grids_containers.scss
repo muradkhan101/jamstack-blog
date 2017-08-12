@@ -63,6 +63,15 @@
 #mobile-info-bar {
   margin-top: 50px;
   display: none;
+  .social-links {
+    justify-content: start;
+  }
+  .social-media-img {
+    -webkit-filter: brightness(0.25);
+    filter: brightness(0.25);
+    margin-left: 0;
+    margin-right: 0.5em;
+  }
 }
 
 //Media Queries

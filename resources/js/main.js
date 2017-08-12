@@ -45,10 +45,14 @@ function hasScrolled() {
     if (Math.abs(lastScrollTop - scrollPos) <= delta)
         return;
     if (scrollPos > lastScrollTop && scrollPos > navbarHeight){
-        navBars.forEach(function(el){el.classList.add('nav-hidden')})
+        navBars.forEach(function(el){
+            el.classList.add('nav-hidden');
+        })
     } else {
         if(scrollPos + window.innerHeight < document.body.scrollHeight) {
-            navBars.forEach(function(el){el.classList.remove('nav-hidden')})
+            navBars.forEach(function(el){
+                el.classList.remove('nav-hidden');
+            })
         }
     }
     lastScrollTop = scrollPos;

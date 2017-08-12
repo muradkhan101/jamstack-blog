@@ -219,7 +219,5 @@ nav {
   justify-content: right;
   transition: top 0.25s $bezier;
 }
-
-.nav-hidden {
-  top: -5em;
-}
+.nav-shown {top: 0;}
+.nav-hidden {top: -5em;}
