@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+    window.scrollTo(0, 0);
     //Masonry initialization
     if (document.querySelector('.home-masonry-grid')) {
         masonry = new Masonry('.home-masonry-grid', {
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 250);
     }
 
-    stickybits('.sidebar-container', {stickyBitStickyOffset: 10, useStickyClasses: true});
+    stickybits('.sidebar', {stickyBitStickyOffset: 10, useStickyClasses: true});
 })
 // Hide/show Nav Bar with scroll
 var userScrolled;

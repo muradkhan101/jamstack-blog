@@ -1,43 +1,40 @@
 //MB06 - Sidebar.scss
 .sidebar {
-  position: relative;
+  position: sticky;
+  top: 10px;
   z-index: 0;
-  margin: $margin-left-right;
-  width: 30%;
+  width: calc(30% - #{2*$margin-for-calc});
   order: 3;
+  display: inline-block;
+  height: 100%;
   .sidebar-container {
     margin: 2% 4% 2% 4%;
     position: relative;
     position: sticky;
     top: 20px;
     box-shadow: $drop-shadow;
-    &:js-is-sticky {position: absolute;}
-    &:js-is-stuck {position: fixed;}
   }
 }
 
 .sidebar-right {
-  flex-grow: 2;
+  width: calc(30% - #{2*$margin-for-calc});
   order: 100;
-  .sidebar-container {
-    background-color: $lightblue;
-  }
+  margin-left: 10px;
+  background-color: $lightblue;
 }
 .sidebar-left {
-  flex-grow: 1;
   order: -1;
-  .sidebar-container {
-    background-color: $softerred;
-  }
+  margin-right: 10px;
+  background-color: $softerred;
 }
 #author-info-bar {
-  width: 25%;
+  width: calc(25% - #{2*$margin-for-calc});
 }
 .author-image {
   margin-bottom: 0.5em;
 }
 #social-link-bar {
-  width: 15%;
+  width: calc(15% - #{2*$margin-for-calc});
   .sidebar-container {
     display: flex;
     flex-direction: column;

@@ -61,13 +61,13 @@ main {
   }
 }
 .author-image {
-  margin: $padding-text;
+  margin: $padding;
 }
 .author-name {
-  padding: $padding-text;
+  padding: $padding;
 }
 .author-biography {
-  padding: $padding-text;
+  padding: $padding;
 }
 .social-links {
   display: flex;
@@ -88,13 +88,13 @@ main {
   background: $eggwhite;
 }
 .card-title {
-  padding: $padding-text;
+  padding: $padding;
   background: $charcoal;
   color: $eggwhite;
   h1,h2,h3,h4 {margin: 0;}
 }
 .card-body {
-  padding: $padding-text;
+  padding: $padding;
   background: $charcoal-light;
   color: $charcoal;
 }
