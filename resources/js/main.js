@@ -17,9 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', function(){scrollHolder.updateAll});
 
     // Burger menu listener
-    document.getElementById('burger-holder').addEventListener('click', function() {
-        document.getElementById('mobile-nav-bar').classList.toggle('is-open');
-    })
+    if (document.getElementById('burger-holder')) {
+        document.getElementById('burger-holder').addEventListener('click', function() {
+            document.getElementById('mobile-nav-bar').classList.toggle('is-open');
+        })
+    }
     // Start Nav Bar scroll listener
     if (document.getElementById('mobile-nav-bar') || document.getElementById('nav-bar')) {
         document.addEventListener('scroll', function(){userScrolled = true;})
@@ -32,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 250);
     }
+
+    stickybits('.sidebar-container', {stickyBitStickyOffset: 10, useStickyClasses: true});
 })
 // Hide/show Nav Bar with scroll
 var userScrolled;

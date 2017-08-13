@@ -11,7 +11,8 @@ main {
 }
 
 #content-container {
-  padding: 0 25px;
+  margin: $margin-left-right;
+  padding: $margin-left-right;
 }
 
 .post {
@@ -28,7 +29,7 @@ main {
   overflow: hidden;
   text-decoration: none;
   color: $eggwhite;
-  box-shadow: $drop-shadow-small;
+  //box-shadow: $drop-shadow-small;
 }
 .post-title, .post-summary {
   transition: inherit;
@@ -59,18 +60,41 @@ main {
     }
   }
 }
-.author-image, .author-info {
-  padding: 6px 8px;
+.author-image {
+  margin: $padding-text;
 }
 .author-name {
-  margin-bottom: 0.5em;
+  padding: $padding-text;
+}
+.author-biography {
+  padding: $padding-text;
 }
 .social-links {
   display: flex;
   justify-content: end;
-  padding-top: 1em;
+  margin-top: 1em;
 }
 .social-media-img {
   margin-left: 0.5em;
   height: 2em;
+  width: auto;
+}
+
+//Cards
+
+.card {
+  border-radius: 2px;
+  box-shadow: $drop-shadow;
+  background: $eggwhite;
+}
+.card-title {
+  padding: $padding-text;
+  background: $charcoal;
+  color: $eggwhite;
+  h1,h2,h3,h4 {margin: 0;}
+}
+.card-body {
+  padding: $padding-text;
+  background: $charcoal-light;
+  color: $charcoal;
 }

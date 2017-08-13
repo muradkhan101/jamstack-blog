@@ -2,15 +2,17 @@
 .sidebar {
   position: relative;
   z-index: 0;
-  margin: 0 5px;
+  margin: $margin-left-right;
   width: 30%;
   order: 3;
   .sidebar-container {
-    padding: 2% 4% 2% 4%;
+    margin: 2% 4% 2% 4%;
     position: relative;
     position: sticky;
     top: 20px;
     box-shadow: $drop-shadow;
+    &:js-is-sticky {position: absolute;}
+    &:js-is-stuck {position: fixed;}
   }
 }
 
@@ -30,19 +32,17 @@
 }
 #author-info-bar {
   width: 25%;
-  .author-image {
-    margin-bottom: 0.5em;
-  }
-  .author-info {
-    margin-left: 0.5em;
-  }
+}
+.author-image {
+  margin-bottom: 0.5em;
 }
 #social-link-bar {
   width: 15%;
   .sidebar-container {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-content: center;
+    text-align: center;
   }
   .social-media-img {
     height: 2em;

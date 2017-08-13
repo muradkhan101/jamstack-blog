@@ -37,14 +37,25 @@
 .column-to-top-red {
   width: 100%;
   position: relative;
+  top: -35%;
   height: 0px;
   &::before {
     content:'';
     position: absolute;
     height: 5000px;
     left: 50%;
-    top: -1000px;
+    top: 0px;
     width: 2px;
+    z-index: -1000;
+    background: $softred;
+  }
+  &::after {
+    content:'';
+    position: absolute;
+    height: 2px;
+    left: 50%;
+    top: 0px;
+    width: 250px;
     z-index: -1000;
     background: $softred;
   }
@@ -58,12 +69,23 @@
     position: absolute;
     height: 5000px;
     left: 50%;
-    top: -1000px;
+    top: -200px;
     width: 2px;
     z-index: -1000;
     background: $skyblue;
   }
+  &::after {
+    content:'';
+    position: absolute;
+    height: 2px;
+    left: 50%;
+    top: -200px;
+    width: 250px;
+    z-index: -1000;
+    background: $skyblue;
+  }
 }
+
 .parallax {
   background-position: 0 0;
 }

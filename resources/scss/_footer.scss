@@ -9,6 +9,9 @@
 #footer-links{
   border-right: 2px solid $skyblue;
   padding-right: 1.25em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 footer nav {
   justify-content: right;
@@ -16,7 +19,7 @@ footer nav {
     margin-right: 0;
     li {
       text-align: right;
-      margin: 0;
+      margin: 2px 0 0;
     }
   }
 }

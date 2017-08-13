@@ -8,6 +8,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
   ul {
     width: auto;
     list-style: none;
@@ -197,7 +198,7 @@ nav {
     margin-top: 5px;
     .social-media-img {
       width: 35px;
-      margin: 0 5px;
+      margin: $margin-left-right;
     }
   }
 }

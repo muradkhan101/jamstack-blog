@@ -13,15 +13,19 @@
      Crazier idea for front, edge detection alg that place title along edge in picture
      Parallax on blog title so it touches nav bar as it leaves the screen, JS function -->
     <div class="main-container">
-        <h1> Recent Articles </h1>
         <div class="flex-row">
-            <div class="home-masonry-grid">
-                {% if recentPosts %}
-                {% makePostSummaries(recentPosts) %}
-                {% else %}
-                <h3>Sorry, no posts were found :(</h3>
-                {% endif %}
+        <div class="card article-container">
+            <div class="card-title">
+                <h1> Recent Articles </h1>
             </div>
+                <div class="home-masonry-grid card">
+                    {% if recentPosts %}
+                    {% makePostSummaries(recentPosts) %}
+                    {% else %}
+                    <h3>Sorry, no posts were found :(</h3>
+                    {% endif %}
+                </div>
+        </div>
             {% import "sidebar.njk" %}
         </div>
     </div>
