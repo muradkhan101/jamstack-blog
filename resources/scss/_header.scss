@@ -217,7 +217,7 @@ nav {
   background: rgba(0,0,0,0.4);
   border-bottom: 2px solid transparentize($softred, 0.4);
   height: 5em;
-  justify-content: right;
+  justify-content: flex-end;
   transition: top 0.25s $bezier;
 }
 .nav-shown {top: 0;}

@@ -1,8 +1,9 @@
 <div class="sidebar sidebar-left" id="social-link-bar">
+    <div class="column-to-top-blue"></div>
+    <div class="sidebar-title"><h4>Social</h4></div>
     <div class="sidebar-container">
         {$ for site in page.author.socialMedia %}
             <a href="{{ site.link }}"> <img class="social-media-img" src="{{ site.icon }}" alt="Link to {{ page.author.name }}'s {{ site.name }}'" </a>
         <% endfor %}
     </div>
-    <div class="column-to-top-blue"></div>
 </div>

@@ -37,7 +37,6 @@
 .column-to-top-red {
   width: 100%;
   position: relative;
-  top: 30%;
   height: 0px;
   &::before {
     content:'';
@@ -63,14 +62,13 @@
 .column-to-top-blue {
   width: 100%;
   position: relative;
-  top:30%;
   height: 0px;
   &::before {
     content:'';
     position: absolute;
     height: 5000px;
     left: 50%;
-    top: -200px;
+    top: 0px;
     width: 2px;
     z-index: -1000;
     background: $skyblue;
@@ -79,8 +77,8 @@
     content:'';
     position: absolute;
     height: 2px;
-    left: 50%;
-    top: -200px;
+    left: -200px;
+    top: 0px;
     width: 250px;
     z-index: -1000;
     background: $skyblue;

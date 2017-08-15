@@ -1,31 +1,37 @@
 //MB06 - Sidebar.scss
 .sidebar {
-  position: sticky;
-  top: 10px;
   z-index: 0;
   width: calc(30% - #{2*$margin-for-calc});
   order: 3;
-  display: inline-block;
   height: 100%;
   .sidebar-container {
-    margin: 2% 4% 2% 4%;
+    &:hover {transform: translateX(0);}
+    top: 45px;
     position: relative;
-    position: sticky;
-    top: 20px;
-    box-shadow: $drop-shadow;
+    transition: transform 0.5s $bezier;
   }
 }
-
 .sidebar-right {
   width: calc(30% - #{2*$margin-for-calc});
   order: 100;
   margin-left: 10px;
-  background-color: $lightblue;
+  .sidebar-title {background: $lightblue;}
+  .sidebar-container, .sidebar-title {
+    transform: translateX(120%);
+    background-color: $lightblue;
+  }
 }
 .sidebar-left {
   order: -1;
   margin-right: 10px;
-  background-color: $softerred;
+  .sidebar-title {background: $softerred; text-align: center;}
+  .sidebar-container, .sidebar-title {
+    transform: translateX(-120%);
+    background-color: $softerred;
+  }
+}
+.sidebar-title {
+  h4 {margin-bottom: 0;}
 }
 #author-info-bar {
   width: calc(25% - #{2*$margin-for-calc});
@@ -34,7 +40,7 @@
   margin-bottom: 0.5em;
 }
 #social-link-bar {
-  width: calc(15% - #{2*$margin-for-calc});
+  width: calc(10% - #{2*$margin-for-calc});
   .sidebar-container {
     display: flex;
     flex-direction: column;
@@ -46,8 +52,44 @@
     margin: 0.25em 0.1em;
   }
 }
- @media (max-width: 1200px) and (min-width: 861px){
-   #social-link-bar {
-     width: 10%;
-   }
+.is-sticky {
+  &#social-link-bar {
+    .sidebar-title {
+      width: calc(10% - #{2*$margin-for-calc});
+    }
+  }
+  &#author-info-bar {
+    .sidebar-title {
+      width: calc(25% - #{2*$margin-for-calc});
+    }
+  }
+  &.sidebar-right {
+    .sidebar-title {
+      width: calc(30% - #{2*$margin-for-calc});
+    }
+  }
+}
+.hoverable {
+  &#social-link-bar {
+    .sidebar-container {
+      width: calc(10% - #{2*$margin-for-calc});
+    }
+  }
+  &#author-info-bar {
+    .sidebar-container {
+      width: calc(25% - #{2*$margin-for-calc});
+    }
+  }
+  &.sidebar-right {
+    .sidebar-container {
+      width: calc(30% - #{2*$margin-for-calc});
+    }
+  }
+  .sidebar-container {position: fixed;}
+  .sidebar-title:hover {
+    ~ .sidebar-container {transform: translateX(0);}
+  }
+}
+ @media (max-width: 1050px) and (min-width: 800px){
+  .sidebar-title {font-size: 0.8em;}
  }
