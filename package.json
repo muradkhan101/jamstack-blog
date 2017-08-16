@@ -1,0 +1,36 @@
+{
+  "name": "jamstack-blog",
+  "version": "1.0.0",
+  "description": "A blog build using the JAMstack philosophy",
+  "main": "index.js",
+  "dependencies": {
+    "contentful": "^4.6.0",
+    "contentful-cli": "^0.6.0",
+    "express": "^4.15.4",
+    "gulp": "^3.9.1",
+    "gulp-nunjucks-html": "^2.0.0",
+    "markdown": "^0.5.0",
+    "nunjucks": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "contentful": "node scripts/contentfulTest.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muradkhan101/jamstack-blog.git"
+  },
+  "keywords": [
+    "JAMstack",
+    "blog",
+    "contentful",
+    "cdn"
+  ],
+  "author": "Murad Khan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muradkhan101/jamstack-blog/issues"
+  },
+  "homepage": "https://github.com/muradkhan101/jamstack-blog#readme"
+}
