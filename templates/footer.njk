@@ -1,23 +1,23 @@
-{% import "macros.njk" %}
+{% include "macros.njk" %}
 
 <footer>
     <div class="flex-row background-triangle-bare parallax" id="footer-content">
         <div id="footer-links">
             <div class="site-links">
                 <nav id='footer-navigation'>
-                    {% navMenu(footer.navigation, 'hoverUnderline') %}
+                   {# {{ navMenu(footer.navigation, 'hoverUnderline') }} #}
                 </nav>
             </div>
             <div class="social-links">
-                {% makeSocialMediaLinks(socialMedia) %}
+               {# {{ makeSocialMediaLinks(socialMedia) }} #}
             </div>
         </div>
         <div id="footer-text" class="flex-col">
             <div class="site-summary">
-                <blockquote>{% footer.summary %} </blockquote
+                <blockquote>{{ footer.summary }} </blockquote>
             </div>
             <div class="copyright">
-                <p> {% footer.copyright %} </p>
+                  <p> {{ footer.copyright }} </p>
             </div>
         </div>
     </div>

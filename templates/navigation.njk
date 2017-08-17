@@ -1,28 +1,28 @@
 <body>
     <header>
-      {{ if home }}
+      {% if isPost %}
+        <nav id='nav-bar' class='nav-shown'>
+           {# {{ navMenu(home.navigation, 'hoverUnderline') }} #}
+        </nav>
+        <nav id='mobile-nav-bar' class='nav-shown'>
+            <div id='burger-holder'>
+                <div class='bar1'></div>
+                <div class='bar2'></div>
+                <div class='bar3'></div>
+                <div class='bar4'></div>
+                <div class='bar5'></div>
+            </div>
+            <div class='mobile-menu'>
+                {# {{ navMenu(home.navigation, 'hoverUnderline') }} #}
+            </div>
+        </nav>
+      {% else %}
           <div id="landing" class="full-screen-grid-container">
               <div class="parallax grid-full cover-image" style="background-image: url('https://source.unsplash.com/featured')"</div>
               <div class="grid-col0-row2 color-backdrop grid-all-center"><h1>Blog Title</h1></div>
                   <nav class='grid-col0-row4 grid-row-center' id='landing-navigation'>
-                      {% navMenu(home.navigation, 'hoverUnderline) %}
+                     {# {{ navMenu(home.navigation, 'hoverUnderline') }} #}
                   </nav>
           </div>
-      {% else %}
-          <nav id='nav-bar' class='nav-shown'>
-             {% navMenu(home.navigation, 'hoverUnderline') %}
-          </nav>
-          <nav id='mobile-nav-bar' class='nav-shown'>
-              <div id='burger-holder'>
-                  <div class='bar1'></div>
-                  <div class='bar2'></div>
-                  <div class='bar3'></div>
-                  <div class='bar4'></div>
-                  <div class='bar5'></div>
-              </div>
-              <div class='mobile-menu'>
-                  {% navMenu(home.navigation, 'hoverUnderline') %}
-              </div>
-          </nav>
       {% endif %}
     </header>

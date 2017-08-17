@@ -1,8 +1,8 @@
-{% import "head.njk" %}
+{% include "head.njk" %}
 
-{% import "navigation.njk" %}
+{% include "navigation.njk" %}
 
-{% import "macros.njk" %}
+{% include "macros.njk" %}
 
 <main style="overflow: hidden;">
     <!-- For front page, have pictures with hover effects like in Projects of current site
@@ -19,16 +19,18 @@
                 <h1> Recent Articles </h1>
             </div>
                 <div class="home-masonry-grid">
-                    {% if recentPosts %}
-                    {% makePostSummaries(recentPosts) %}
+                    {% if posts %}
+                        {% for post in posts %}
+                           {{ makePostSummary(post) }}
+                        {% endfor %}
                     {% else %}
                     <h3>Sorry, no posts were found :(</h3>
                     {% endif %}
                 </div>
         </div>
-            {% import "sidebar.njk" %}
+            {% include "sidebar.njk" %}
         </div>
     </div>
 </main>
 </body>
-{% import "footer.njk" %}
+{% include "footer.njk" %}

@@ -4,6 +4,6 @@
     <div class="sidebar-container">
         {$ for site in page.author.socialMedia %}
             <a href="{{ site.link }}"> <img class="social-media-img" src="{{ site.icon }}" alt="Link to {{ page.author.name }}'s {{ site.name }}'" </a>
-        <% endfor %}
+        {% endfor %}
     </div>
 </div>

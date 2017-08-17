@@ -1,36 +1,27 @@
-{% macro navList(options, class='') %}
+{% macro navMenu(options, class='') %}
     <ul class='{{ class }}'>
     {% for link in options %}
         <li><a href='{{ link.href }}'>{{ link.title }}</a></li>
     {% endfor %}
 {% endmacro %}
 
-{% macro makePostSummaries(posts) %}
-    {% for post in posts %}
-        <a class="grid-item post-link" href="{{ post.link }}">
-            <div class="post cover-image" style="background-image: url('https://source.unsplash.com/featured/?{% post.category[0] %}');">
-                <div class="post-title">
-                    <h3>{{ post.title }}</h3>
-                </div>
-                <div class="post-summary">
-                    <p>{{ post.summary }}</p>
-                </div>
+{% macro makePostSummary(post) %}
+    <a class="grid-item post-link" href="{{ link }}">
+        <div class="post cover-image" style="background-image: url('https://source.unsplash.com/featured/?{{ category[0] }}');">
+            <div class="post-title">
+                <h3>{{ title }}</h3>
             </div>
-        </a>
-    {% endfor %}
+            <div class="post-summary">
+                <p>{{ summary }}</p>
+            </div>
+        </div>
+    </a>
 {% endmacro %}
-
-{% macro loopThroughPosts(posts, func) %}
-    {% for post in posts %}
-    {% func(post) %}
-    {% endfor %}
-{% endmacro %}
-
 
 {% macro makeSocialMediaLinks(sites) %}
     {% for site in sites %}
-        <a href='{% site.url %}'>
-            <img src='{% site.icon %}' class='social-media-img' alt='Link to my {% site.name %}'></img>
+        <a href='{{ site.url }}'>
+            <img src='{{ site.icon }}' class='social-media-img' alt='Link to my {{ site.name }}'></img>
         </a>
     {% endfor %}
 {% endmacro %}
