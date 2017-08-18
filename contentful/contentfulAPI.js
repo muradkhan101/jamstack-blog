@@ -22,7 +22,7 @@ const getPhotoFromAuthor = (author) => {
     } else return "insert blank photo";
 }
 
-const getCategories = (categoryObject) => {
+const extractCategories = (categoryObject) => {
     var categories = [];
     if (categoryObject) {
         for (var i = 0; i < categoryObject.length; i++) {
@@ -41,79 +41,56 @@ const getAuthorInfo = (authorObj) => {
     return author;
 }
 
-exports.flattenLists = (contentType, field, id) => {
-    var flattened = {};
+const getAllPosts = () => {
+    return client.getEntries({
+        content_type: '2wKn6yEnZewu2SCCkus4as',
+        include: 3
+    })
+}
+
+const getRecentPosts = (limit) => {
+    return client.getEntries({
+        order: '-sys.createdAt,sys.id',
+        content_type: '2wKn6yEnZewu2SCCkus4as',
+        limit: 10
+    }).then(function(data){
+        var recentPosts = [];
+        for (var i = 0; i < data.items.length; i++) {
+            recentPosts.push(extractPostInfo(data.items[i]))
+        }
+        return recentPosts;
+    })
+}
+
+const flattenLists = (contentType, field, id) => {
     client.getEntries({
         content_type: contentType,
         linking_field: field,
         target_entry_id: id
     }).then(function(data) {
+        var flattened = {};
         for (var key in data) {
             flattened[key] = data[key];
         }
+        return flattened;
     }).catch(console.log)
-    return flattened;
 }
 
-exports.extractPostInfo = (post) => {
+const extractPostInfo = (post) => {
     var postInfo = {};
     postInfo.title = post.fields.title;
     postInfo.slug = post.fields.slug;
     postInfo.body = markdown.toHTML(post.fields.body);
-    postInfo.categories = getCategories(post.fields.category);
+    postInfo.summary = postInfo.body.slice(0, 255) + '...';
+    postInfo.categories = extractCategories(post.fields.category);
     postInfo.author = getAuthorInfo(post.fields.author[0]); // Assumes posts only have one author
     return postInfo;
 }
 
-exports.client = client;
-
-//
-// exports.getEntry = async (id) => {
-//     try {
-//         return await client.getEntry(id);
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// }
-// exports.getAllEntries = async () => {
-//     try {
-//         return await client.getEntries();
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// }
-// exports.getLinkedItems = async (typeID, linkOn, targetID) => {
-//     try {
-//         return await client.getEntries({
-//             content_type: typeID,
-//             linking_field: linkOn,
-//             target_entry_id: targetID
-//         });
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// }
-// exports.getCategory = async (typeID, category) => {
-//     try {
-//         return await client.getEntries({
-//             content_type: typeID,
-//             "sys.fields.category": category
-//         });
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// }
-// exports.search = async (queryTerm) => {
-//     try {
-//         return await client.getEntries({
-//             query: queryTerm
-//         });
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// }
+module.exports = {
+    "client": client,
+    "flattenLists": flattenLists,
+    "getRecentPosts": getRecentPosts,
+    "getAllPosts": getAllPosts,
+    "extractPostInfo": extractPostInfo
+}

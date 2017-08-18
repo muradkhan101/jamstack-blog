@@ -1,22 +1,22 @@
 {% include "head.njk" %}
 
-{% include "macros.njk" %}
+{% import "macros.njk" as macro %}
 
 {% include "navigation.njk" %}
+
 <div class="spacer-image parallax" style="background-image: url('https://source.unsplash.com/random/daily');" value="0.3"></div>
-
-<div class="main-container">
-    {% include "social-sidebar.njk" %}
-    <div id="content-container" class="card">
-        <div class="post-title">
-            <h1>{{ title }}</h1>
+<main class="parallax background-square-full" value="0.3">
+    <div class="main-container flex-row">
+        {% include "social-sidebar.njk" %}
+        <div id="content-container" class="card">
+            <div class="single-post-title">
+                <h1>{{ title }}</h1>
+            </div>
+            <div class="post-content">
+                {{ body }}
+            </div>
         </div>
-
-        <div class="post-content">
-            {{ body }}
-        </div>
+        {% include "author-sidebar.njk" %}
     </div>
-    {% include "author-sidebar.njk" %}
-</div>
-
+</main>
 {% include "footer.njk" %}

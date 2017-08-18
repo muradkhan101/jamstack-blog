@@ -1,15 +1,14 @@
-{% include "macros.njk" %}
-
+{% import "macros.njk" as macro %}
 <footer>
     <div class="flex-row background-triangle-bare parallax" id="footer-content">
         <div id="footer-links">
             <div class="site-links">
                 <nav id='footer-navigation'>
-                   {# {{ navMenu(footer.navigation, 'hoverUnderline') }} #}
+                    {{ macro.navMenu(navigation, 'hoverUnderline') }}
                 </nav>
             </div>
             <div class="social-links">
-               {# {{ makeSocialMediaLinks(socialMedia) }} #}
+               {# {{ macro.makeSocialMediaLinks(socialMedia) }} #}
             </div>
         </div>
         <div id="footer-text" class="flex-col">

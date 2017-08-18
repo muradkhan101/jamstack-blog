@@ -2,7 +2,7 @@
 
 {% include "navigation.njk" %}
 
-{% include "macros.njk" %}
+{% import "macros.njk" as macro %}
 
 <main style="overflow: hidden;">
     <!-- For front page, have pictures with hover effects like in Projects of current site
@@ -28,7 +28,7 @@
                     {% endif %}
                 </div>
         </div>
-            {% include "sidebar.njk" %}
+           {# {% include "sidebar.njk" %} #}
         </div>
     </div>
 </main>
