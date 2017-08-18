@@ -43,7 +43,7 @@ const getAuthorInfo = (authorObj) => {
 
 const getAllPosts = () => {
     return client.getEntries({
-        content_type: '2wKn6yEnZewu2SCCkus4as',
+        content_type: typeId.post,
         include: 3
     })
 }
@@ -51,7 +51,7 @@ const getAllPosts = () => {
 const getRecentPosts = (limit) => {
     return client.getEntries({
         order: '-sys.createdAt,sys.id',
-        content_type: '2wKn6yEnZewu2SCCkus4as',
+        content_type: typeId.post,
         limit: 10
     }).then(function(data){
         var recentPosts = [];
@@ -92,5 +92,6 @@ module.exports = {
     "flattenLists": flattenLists,
     "getRecentPosts": getRecentPosts,
     "getAllPosts": getAllPosts,
-    "extractPostInfo": extractPostInfo
+    "extractPostInfo": extractPostInfo,
+    "typeID": typeId
 }
