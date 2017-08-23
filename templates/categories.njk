@@ -1,0 +1,17 @@
+{% include "head.njk" %}
+
+{% import "macros.njk" as macro %}
+
+{% include "navigation.njk" %}
+
+<div class="spacer-image parallax" style="background-image: url('https://source.unsplash.com/random/daily');" value="0.3"></div>
+<main class="parallax background-square-full" value="0.3">
+    <div class="main-container flex-row">
+        <div id="content-container" class="card">
+            <div class="card-title"><h1>Browse by Category</h1></div>
+            <div id="react-container"></div>
+        </div>
+        {% include "sidebar.njk" %}
+    </div>
+</main>
+{% include "footer.njk" %}
