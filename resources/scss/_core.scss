@@ -9,7 +9,6 @@ main {
   background-size: 250px 250px;
   padding: 300px 0 0 0;
 }
-
 .post {
   transition: all 0.4s $bezier;
   &:hover {
@@ -93,3 +92,22 @@ main {
   background: $charcoal-light;
   color: $charcoal;
 }
+
+//Code blocks
+
+pre {
+  background: #ccc;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  border-bottom: 2px solid $skyblue;
+}
+code {
+  padding: 1em 3em;
+  white-space: pre-wrap;
+}
+
+.var { color: $softred; }
+.function { color: $lightblue; }
+.comment { color: $charcoal-light; font-style: italic; }
+.string { color: #79A772; }
+.key { color: #E2833F; }
