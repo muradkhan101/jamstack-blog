@@ -20,7 +20,7 @@
 
 {% macro makeSocialMediaLinks(sites) %}
     {% for site in sites %}
-        <a href='{{ site.url }}'>
+        <a href='{{ site.link }}'>
             <img src='{{ site.icon }}' class='social-media-img' alt='Link to my {{ site.name }}'></img>
         </a>
     {% endfor %}

@@ -3,7 +3,7 @@
     <div class="sidebar-title"><h4>Social</h4></div>
     <div class="sidebar-container">
         {% for site in author.socialMedia %}
-            <a href="{{ site.link }}"> <img class="social-media-img" src="{{ site.icon }}" alt="Link to {{ author.name }}'s {{ site.name }}'" </a>
+            <a href="{{ site.link }}"> <img class="social-media-img" src="{{ site.image }}" alt="Link to {{ author.name }}'s {{ site.name }}'" </a>
           {% else %}
             <h5> No links present </h5>
         {% endfor %}

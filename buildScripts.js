@@ -75,3 +75,19 @@ exports.buildHomePage = () => {
     })
 }
 
+exports.buildCategoryPage = () => {
+    contentful.getRecentPosts(10)
+        .then(function(posts) {
+            posts.navigation = navigation;
+            posts.footer = footer;
+            gulp.src('./templates/home.njk')
+                .pipe(nunjucks({
+                    searchPaths: ['./templates'],
+                    locals: posts
+                }))
+                .pipe(rename('home.html'))
+                .pipe(gulp.dest('./build'))
+        }).catch(function (err){
+            console.log(err)
+    })
+}

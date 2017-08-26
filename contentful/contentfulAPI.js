@@ -32,11 +32,20 @@ const extractCategories = (categoryObject) => {
     return categories;
 }
 
+const makeSocialArray = (json) {
+  let socialObject = JSON.parse(json);
+  socialArray = [];
+  for (let link in Object.keys(socialObject)) {
+    socialArray.push(socialObject[link])
+  }
+  return socialArray;
+}
+
 const getAuthorInfo = (authorObj) => {
     var author = {};
     author.name = authorObj.fields.name;
     author.biography = authorObj.fields.biography;
-    // author.socialLinks = getSocialLinks(authorObj.fields.socialLinks);
+    author.socialMedia = makeSocialArray(authorObj.fields.socialMedia);
     author.photo = getPhotoFromAuthor(authorObj);
     return author;
 }
