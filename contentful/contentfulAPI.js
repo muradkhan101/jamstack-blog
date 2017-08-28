@@ -1,6 +1,6 @@
 const contentful = require('contentful');
 const config = require('./config.json');
-const markdown = require('markdown').markdown;
+const marked = require('marked');
 
 const typeId = {
     author: "1kUEViTN4EmGiEaaeC6ouY",
@@ -32,7 +32,7 @@ const extractCategories = (categoryObject) => {
     return categories;
 }
 
-const makeSocialArray = (json) {
+const makeSocialArray = (json) => {
   let socialObject = JSON.parse(json);
   socialArray = [];
   for (let link in Object.keys(socialObject)) {
@@ -89,10 +89,11 @@ const extractPostInfo = (post) => {
     var postInfo = {};
     postInfo.title = post.fields.title;
     postInfo.slug = post.fields.slug;
-    postInfo.body = markdown.toHTML(post.fields.body);
+    postInfo.body = marked(post.fields.body);
     postInfo.summary = postInfo.body.slice(0, 255) + '...';
-    postInfo.categories = extractCategories(post.fields.category);
-    postInfo.author = getAuthorInfo(post.fields.author[0]); // Assumes posts only have one author
+    // postInfo.categories = extractCategories(post.fields.category);
+    // postInfo.author = getAuthorInfo(post.fields.author[0]); // Assumes posts only have one author
+    postInfo.date = post.fields.date;
     return postInfo;
 }
 

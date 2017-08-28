@@ -6,7 +6,9 @@ body {
   font-family: $sans-serifs;
   font-size: 12pt;
 }
-h1, h2, h3, h4 {margin-bottom: 30px;}
+h1, h2, h3, h4 {margin-bottom: $heading-bottom;}
+p, li {margin-bottom: #{$heading-bottom/3}}
+
 h1 {
   font-size: 3.5em;
   font-weight: $heavy;
@@ -38,7 +40,6 @@ h6 {
 p, blockquote, article {
   font-family: $serifs;
   font-size: 1em;
-  margin-bottom: 1em;
 }
 code {
   font-family: $monospace;
@@ -47,3 +48,6 @@ code {
 .indent-text {
   padding-left: 10px;
 }
+
+ol li {list-style: decimal; margin-left: 2em;}
+ul li {list-style: circle; margin-left: 2em; }

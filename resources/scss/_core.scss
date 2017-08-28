@@ -100,14 +100,19 @@ pre {
   border-radius: 4px;
   margin-bottom: 1em;
   border-bottom: 2px solid $skyblue;
+  padding: 0em 2em 1em;
+  overflow: scroll;
 }
 code {
-  padding: 1em 3em;
-  white-space: pre-wrap;
+  padding: 0 0.5em;
+  li {list-style: none;}
 }
 
+.file-name {margin-bottom: 4px;}
+.class {color: #f78018;}
+.obj {color: #d238ea;}
 .var { color: $softred; }
-.function { color: $lightblue; }
+.function { color: #3564d0; }
 .comment { color: $charcoal-light; font-style: italic; }
 .string { color: #79A772; }
-.key { color: #E2833F; }
+.key { color: #ff38eb; }
