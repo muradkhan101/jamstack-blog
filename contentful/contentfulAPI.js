@@ -91,8 +91,9 @@ const extractPostInfo = (post) => {
     postInfo.slug = post.fields.slug;
     postInfo.body = marked(post.fields.body);
     postInfo.summary = postInfo.body.slice(0, 255) + '...';
-    // postInfo.categories = extractCategories(post.fields.category);
-    // postInfo.author = getAuthorInfo(post.fields.author[0]); // Assumes posts only have one author
+    postInfo.categories = extractCategories(post.fields.category);
+    postInfo.author = getAuthorInfo(post.fields.author[0]); // Assumes posts only have one author
+    postInfo.isPost = post.fields.isPost;
     postInfo.date = post.fields.date;
     return postInfo;
 }

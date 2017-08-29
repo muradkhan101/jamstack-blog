@@ -75,7 +75,6 @@ function ParallaxScroll(el) {
     this.element = el;
     this.offsetTop = el.offsetTop;
     this.height = el.clientHeight;
-    this.scrolling = false;
     return this;
 }
 
@@ -86,37 +85,35 @@ ParallaxScroll.prototype.moveObject = function () {
     }
 }
 
-ParallaxScroll.prototype.setListener = function() {
-    window.addEventListener('scroll', () => {
-        if (!this.scrolling) {
-            window.requestAnimationFrame(() => {
-                this.moveObject();
-                this.scrolling = false;
-            })
-        }
-        this.scrolling = true;
-    })
-}
 ParallaxScroll.prototype.update = function() {
     this.height = this.element.clientHeight;
     this.offsetTop = this.element.offsetTop;
 }
 
-
-
 function ParallaxScrollHolder(selector) {
     this.elements = document.querySelectorAll(selector);
     this.scrollObjects = [];
+    this.scrolling = false;
 }
+
 ParallaxScrollHolder.prototype.start = function () {
+  window.addEventListener('scroll', () => {
+      if (!this.scrolling) {
+          window.requestAnimationFrame(() => {
+              this.updateAll();
+              this.scrolling = false;
+          })
+      }
+      this.scrolling = true;
+  })
     this.elements.forEach((el, i) => {
         this.scrollObjects[i] = new ParallaxScroll(el);
-        this.scrollObjects[i].setListener();
     })
 }
 ParallaxScrollHolder.prototype.updateAll = function() {
     this.scrollObjects.forEach(function(el) {
         el.update();
+        el.moveObject();
     })
 }
 

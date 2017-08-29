@@ -5,15 +5,15 @@
 {% include "navigation.njk" %}
 
 <div class="spacer-image parallax" style="background-image: url('https://source.unsplash.com/random/daily');" value="0.3"></div>
-<main class="parallax background-square-full" value="0.3">
+<main class="parallax background-square-bare" value="0.3">
     <div class="main-container flex-row">
         {% include "social-sidebar.njk" %}
         <div id="content-container" class="card">
             <div class="single-post-title">
-                <h1>{{ title }}</h1>
+                <h1 style="margin-bottom: 10px;">{{ title }}</h1>
             </div>
             <div class="post-info">
-                <p><em> {{ date }} </em></p>
+                <p style="margin-bottom: 25px;">Posted on: <em>{{ date }}</em></p>
             </div>
             <div class="post-content">
                 {{ body }}
