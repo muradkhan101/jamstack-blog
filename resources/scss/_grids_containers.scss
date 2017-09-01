@@ -66,6 +66,9 @@
   margin: 0 auto;
   padding: 2em 0.5em;
   width: calc(65% - #{2*$margin-for-calc});
+  border-radius: 2px;
+  box-shadow: $drop-shadow-small;
+  background: $eggwhite;
 }
 #mobile-info-bar {
   margin: 50px 12px 0;

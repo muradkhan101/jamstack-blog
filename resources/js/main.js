@@ -142,13 +142,18 @@ StickyAppear.prototype.updatePosition = function () {
         sidebarContainer.style.top = `${this.element.offsetTop-pageY+this.element.offsetHeight}px`;
         if (this.parent.classList.contains('is-sticky')) this.parent.classList.remove('is-sticky');
         if (this.parent.classList.contains('hoverable')) this.parent.classList.remove('hoverable');
-    } else if (pageY > this.parent.offsetTop) {
-        this.element.style.top = `${Math.min(Math.round(pageY-this.parent.offsetTop), 20)}px`;
+    } else if (pageY > this.parent.offsetTop) { //&& pageY < document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20) {
+        this.element.style.top = `${Math.min(Math.round(pageY-this.parent.offsetTop), 20+document.getElementById('nav-bar').clientHeight)}px`;
         this.element.style.position = 'fixed';
         this.element.style.transform = 'translateX(0%)';
         sidebarContainer.style.top = `${parseInt(this.element.style.top)+this.element.clientHeight}px`;
         if (!this.parent.classList.contains('is-sticky')) this.parent.classList.add('is-sticky');
-    }
+    }// else if (pageY > document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20) {
+    //   this.element.style.position = 'absolute';
+    //   this.element.style.top = document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20;
+    //   sidebarContainer.style.position = 'absolute';
+    //   sidebarContainer.style.top = document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - 20;
+    // }
     if (!this.parent.classList.contains('hoverable') && this.element.style.transform.indexOf('(0%)') > -1) this.parent.classList.add('hoverable');
 }
 

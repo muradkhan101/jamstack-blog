@@ -4,10 +4,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
 
   {% if isPost %}
-    <title> {{ title }} - Blog Title </title>
+    <title> {{ title }} - {{blogname}} </title>
     <meta name="author" content="{{ author.name }}"">
   {% else %}
-    <title> Blog Title </title>
+    <title> {{blogname}} </title>
   {% endif %}
 
   <meta name="description" content="A blog about just about anything (but mostly programming">
