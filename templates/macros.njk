@@ -6,7 +6,7 @@
 {% endmacro %}
 
 {% macro makePostSummary(post) %}
-    <a class="grid-item post-link" href="{{ link }}">
+    <a class="grid-item post-link" href="posts/{{link}}">
         <div class="post cover-image" style="background-image: url('https://source.unsplash.com/featured/?{{ category[0] }}');">
             <div class="post-title">
                 <h3>{{ post.title }}</h3>

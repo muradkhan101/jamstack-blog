@@ -28,7 +28,12 @@
                     {% endif %}
                 </div>
         </div>
-           {# {% include "sidebar.njk" %} #}
+           {{ include "./popular/popular-sidebar.njk"}}
+        </div>
+        <div id="mobile-info-bar">
+          <div class="flex-row">
+            {{include "sidebar.njk}}
+          </div>
         </div>
     </div>
 </main>

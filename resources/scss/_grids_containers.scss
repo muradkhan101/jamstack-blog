@@ -73,7 +73,7 @@
 #mobile-info-bar {
   margin: 50px 12px 0;
   display: none;
-  border: 2px solid $skyblue;
+  border: 4px solid $skyblue;
   .social-links {
     justify-content: start;
     margin-bottom: 1em;
@@ -90,7 +90,7 @@
 //Media Queries
 
 @media (max-width: 860px) {
-  #article-container, #content-container {width: calc(100% - 40px);}
+  #article-container, #content-container {width: calc(100% - 24px);}
   .sidebar {display: none;}
   #mobile-info-bar {display: block;}
   .main-container {display: flex; flex-direction: column;}

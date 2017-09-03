@@ -3,6 +3,7 @@
     <header>
       {% if isPost %}
         <nav id='nav-bar' class='nav-shown'>
+            <div class='site-name'>{{blogname}}</div>
             {{ macro.navMenu(navigation, 'hoverUnderline') }}
         </nav>
         <nav id='mobile-nav-bar' class='nav-shown'>

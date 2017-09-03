@@ -7,7 +7,7 @@
 <div class="spacer-image parallax" style="background-image: url('https://source.unsplash.com/random/daily');" value="0.3"></div>
 <main class="parallax background-square-bare" value="0.3">
     <div class="main-container flex-row">
-        {% include "social-sidebar.njk" %}
+        {% include "./social-media/social-sidebar.njk" %}
         <div id="content-container" class="">
             <div class="single-post-title">
                 <h1 style="margin-bottom: 10px;">{{ title }}</h1>
@@ -19,7 +19,12 @@
                 {{ body }}
             </div>
         </div>
-        {% include "author-sidebar.njk" %}
+        {% include "./author/author-sidebar.njk" %}
+        <div id="mobile-info-bar">
+          <div class="flex-row">
+            {{include "./author/author-module.njk"}}
+          </div>
+        </div>
     </div>
 </main>
 {% include "footer.njk" %}

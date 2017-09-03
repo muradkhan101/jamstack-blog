@@ -143,7 +143,8 @@ StickyAppear.prototype.updatePosition = function () {
         if (this.parent.classList.contains('is-sticky')) this.parent.classList.remove('is-sticky');
         if (this.parent.classList.contains('hoverable')) this.parent.classList.remove('hoverable');
     } else if (pageY > this.parent.offsetTop) { //&& pageY < document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20) {
-        this.element.style.top = `${Math.min(Math.round(pageY-this.parent.offsetTop), 20+document.getElementById('nav-bar').clientHeight)}px`;
+        let navHeight = document.getElementById('nav-bar') ? document.getElementById('nav-bar').clientHeight : 0;
+        this.element.style.top = `${Math.min(Math.round(pageY-this.parent.offsetTop), 20 + navHeight)}px`;
         this.element.style.position = 'fixed';
         this.element.style.transform = 'translateX(0%)';
         sidebarContainer.style.top = `${parseInt(this.element.style.top)+this.element.clientHeight}px`;
