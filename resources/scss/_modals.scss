@@ -1,0 +1,57 @@
+// MB10 - modals.scss
+
+#modal-container {
+	h3 {margin-bottom: 0.6em;}
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.0);
+	width: 100%;
+	height: 100vh;
+	display: none;
+	transition: background-color 1s $bezier;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+#modal {
+	z-index: 1;
+	transition: left 1s $bezier, right 1s $bezier;
+	position: relative;
+	width: 44%;
+	min-height: 300px;
+	padding: 5% 5%;
+	max-width: 450px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  left: -1000px;
+	background-color: #252525;
+	color: white;
+}
+#close-form {
+	position: absolute;
+	right: 2.5%;
+	top: 1%;
+	color: $eggwhite;
+	transition: all 0.4s ease-in-out;
+	transform-origin: center center;
+	&:hover {
+		color: #d62828;
+		transform: rotate(360deg);
+		cursor: pointer;
+	}
+}
+@media (max-width: 800px), (min-device-pixel-ratio: 2) {
+	#modal-container{
+		height: auto;
+	}
+	#modal {
+		padding: 30px 20px;
+		height: initial;
+		width: 95%;
+		max-width: none;
+	}
+}
+.modal-title, .modal-body {color: $eggwhite;}

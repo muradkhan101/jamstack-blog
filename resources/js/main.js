@@ -133,22 +133,26 @@ StickyAppear.prototype.updatePosition = function () {
     var pageY = window.pageYOffset;
     var windowH = window.innerHeight;
     var sidebarContainer = this.parent.children[this.parent.children.length-1];
-    if (pageY + windowH > this.parent.offsetTop + 80 && !(pageY + 20 > this.parent.offsetTop)) {
-        this.element.style.position = 'relative';
-        sidebarContainer.style.top = '0px';
-        this.element.style.top = '0px';
-        var scaled = (-(pageY + windowH/2 - this.offsetTopInitial)/(250));
-        this.element.style.transform = `translateX(${this.side}${Math.max(Math.round(scaled*100), 0)}%)`;
-        sidebarContainer.style.top = `${this.element.offsetTop-pageY+this.element.offsetHeight}px`;
-        if (this.parent.classList.contains('is-sticky')) this.parent.classList.remove('is-sticky');
-        if (this.parent.classList.contains('hoverable')) this.parent.classList.remove('hoverable');
-    } else if (pageY > this.parent.offsetTop) { //&& pageY < document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20) {
+    var currentPoint = pageY + windowH;
+    var startPoint = this.element.offsetTop - windowH/2 + 25;
+    var endPoint = this.parent.offsetTop + windowH/2;
+    console.log(endPoint - startPoint, 'diff');
+    if (pageY > this.parent.offsetTop) { //&& pageY < document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20) {
         let navHeight = document.getElementById('nav-bar') ? document.getElementById('nav-bar').clientHeight : 0;
         this.element.style.top = `${Math.min(Math.round(pageY-this.parent.offsetTop), 20 + navHeight)}px`;
         this.element.style.position = 'fixed';
         this.element.style.transform = 'translateX(0%)';
         sidebarContainer.style.top = `${parseInt(this.element.style.top)+this.element.clientHeight}px`;
         if (!this.parent.classList.contains('is-sticky')) this.parent.classList.add('is-sticky');
+    } else if (currentPoint > startPoint) {
+        this.element.style.position = 'relative';
+        sidebarContainer.style.top = '0px';
+        this.element.style.top = '0px';
+        console.log((currentPoint - startPoint)/(endPoint - startPoint) * 100)
+        this.element.style.transform = `translateX(${this.side}${Math.max(Math.round((currentPoint - endPoint)/(startPoint - endPoint)*100), 0)}%)`;
+        sidebarContainer.style.top = `${this.element.offsetTop-pageY+this.element.offsetHeight}px`;
+        if (this.parent.classList.contains('is-sticky')) this.parent.classList.remove('is-sticky');
+        if (this.parent.classList.contains('hoverable')) this.parent.classList.remove('hoverable');
     }// else if (pageY > document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20) {
     //   this.element.style.position = 'absolute';
     //   this.element.style.top = document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20;

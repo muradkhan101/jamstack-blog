@@ -47,7 +47,6 @@ div.button {
     height: 100%;
   }
 }
-
 label, textarea, input {display: block;}
 label {margin-bottom: 0.2em; font-family: $sans-serifs; font-size: 0.8em;}
 input[type='text'], input[type='email'], textarea {
@@ -62,4 +61,10 @@ input[type='text'], input[type='email'], textarea {
   margin-bottom: 0.75em;
   font-family: $serifs;
   &:focus {border-color: $softred; box-shadow: $drop-shadow;}
+}
+input[type='checkbox'] {padding-left: 10px;}
+.checkbox {
+  display: flex;
+  margin: 10px;
+  label {font-size: 1em;}
 }
