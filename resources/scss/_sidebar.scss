@@ -32,12 +32,14 @@
 }
 .sidebar-title {
   h4 {margin-bottom: 0;}
+  padding-left: 6px;
 }
 #author-info-bar {
   width: calc(25% - #{2*$margin-for-calc});
 }
-.author-image {
+.sidebar-content {
   margin-bottom: 0.5em;
+  margin: $padding;
 }
 #social-link-bar {
   width: calc(10% - #{2*$margin-for-calc});

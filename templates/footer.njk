@@ -20,5 +20,23 @@
             </div>
         </div>
     </div>
+    <script type='text/javascript'>
+      // Button hover animation
+      var butts = document.querySelectorAll('div.button');
+        [].forEach.call(butts, function(e){
+          e.addEventListener('animationend', (event)=>{
+            event.target.classList.toggle('hover');
+          });
+          e.addEventListener('mouseenter', (event)=> {
+            var button = event.target;
+            button.classList.toggle('hover');
+          });
+          e.addEventListener('click', (event) => {
+            event.preventDefault();
+            e.firstElementChild.click();
+          })
+        });
+    </script>
+    {{ macro.importJS()}}
 </footer>
 </body>

@@ -5,19 +5,30 @@ button, input[type='submit'] {
   display: inline-block;
   position: relative;
   background: linear-gradient(90deg, $softred, $skyblue);
-  border-radius: 0;
   border: none;
+  border-radius: 2px;
+  border-bottom: 4px solid $charcoal;
   font-style: italic;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 400;
   padding: 0.4em 0.9em;
   color: $eggwhite;
-  // &:hover::after {
-  // 	transition: transform 0.4s $bezier 0s;
-  // 	transform: translateX(-150px);
-  // }
+  font-family: $sans-serifs;
+  &:focus {
+  	margin-top: 2px;
+    border-bottom: 2px solid $charcoal;
+    outline: none;
+  }
 }
-
+.hover {
+	&::before {animation: 0.5s $bezier 0s button;}
+}
+@keyframes button {
+	0% {transform-origin: left; transform: scaleX(0);}
+	50% {transform: scaleX(1); transform-origin: left;}
+	51% {transform-origin: right;}
+	100% {transform: scaleX(0); transform-origin: right;}
+}
 div.button {
   display: inline-block;
   overflow: hidden;
@@ -38,16 +49,17 @@ div.button {
 }
 
 label, textarea, input {display: block;}
-label {margin-bottom: 0.2em; font-family: $sans-serifs; font-size: 1.1em;}
-input[type='text'],input[type='email'], textarea {
+label {margin-bottom: 0.2em; font-family: $sans-serifs; font-size: 0.8em;}
+input[type='text'], input[type='email'], textarea {
   outline: none;
   font-size: 12pt;
   color: $eggwhite;
   border: none;
-  border-bottom: 2px solid $eggwhite;
-  background: transparent;
+  border-radius: 4px;
+  background: $charcoal-light;
   width: 100%;
+  padding: $padding;
   margin-bottom: 0.75em;
   font-family: $serifs;
-  &:focus {border-color: $softred;}
+  &:focus {border-color: $softred; box-shadow: $drop-shadow;}
 }

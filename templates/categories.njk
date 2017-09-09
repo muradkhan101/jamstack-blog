@@ -8,12 +8,15 @@
 <main class="parallax background-square-full" value="0.3">
     <div class="main-container flex-row">
         <div id="content-container" class="card">
-            <div class="card-title"><h1>Browse by Category</h1></div>
-            <div id="react-container"></div>
+            <div id="react-container" class='card'></div>
         </div>
-        {% include "sidebar.njk" %}
+        {% include "./newsletter-signup/signup-sidebar.njk" %}
+    </div>
+    <div id="mobile-info-bar">
+      <div class="flex-col">
+        <h4>Join the Mailing List!</h4>
+        {% include "./newsletter-signup/signup-module.njk" %}
+      </div>
     </div>
 </main>
-<script src="../resources/js/categories-load.js"></script>
-<script src="../resources/js/categories.js"></script>
 {% include "footer.njk" %}

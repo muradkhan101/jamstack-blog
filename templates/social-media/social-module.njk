@@ -1,5 +1,7 @@
+<div class='sidebar-content'>
 {% for site in author.socialMedia %}
     <a href="{{ site.link }}"> <img class="social-media-img" src="{{ site.image }}" alt="Link to {{ author.name }}'s {{ site.name }}'" </a>
   {% else %}
     <h5> No links present </h5>
 {% endfor %}
+</div>

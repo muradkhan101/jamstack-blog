@@ -90,7 +90,7 @@
 //Media Queries
 
 @media (max-width: 860px) {
-  #article-container, #content-container {width: calc(100% - 24px);}
+  .article-container, #content-container {width: calc(100% - 24px);}
   .sidebar {display: none;}
   #mobile-info-bar {display: block;}
   .main-container {display: flex; flex-direction: column;}

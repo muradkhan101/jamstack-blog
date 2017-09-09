@@ -14,7 +14,7 @@
   text-decoration: none; }
 .hoverUnderline a:before {
   content: '';
-  background: #202130;
+  background: $eggwhite;
   position: absolute;
   bottom: -0.1em;
   left: 0;
@@ -98,3 +98,36 @@
 .js-is-stuck {position: absolute !important;}
 
 a {color: $skyblue;}
+
+div.focus-border {
+	position: relative;
+	span{
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			bottom: 5px;
+			left: 0;
+      margin-left: 2%;
+			width: 96%;
+			height: 2px;
+			transition: all 0.3s $bezier;
+			transform: scaleX(0);
+		}
+		&::before {
+			transition-delay: 0s;
+			z-index: 2;
+			background-color: $softred;
+			transform-origin: left;
+		}
+		&::after {
+			transition-delay: 0.2s;
+			background-color: $skyblue;
+			transform-origin: right;
+		}
+		&:hover::before, &:hover::after, &:focus::before, &:focus::after {
+			transform: scaleX(1);
+		}
+		&:hover::before, &:focus::before {transition-delay: 0.2s; z-index: 2;}
+		&:hover::after, &:focus::after {transition-delay: 0s;}
+	}
+}

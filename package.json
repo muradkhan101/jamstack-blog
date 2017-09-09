@@ -10,8 +10,14 @@
     "gulp": "^3.9.1",
     "gulp-nunjucks-html": "^2.0.0",
     "gulp-rename": "^1.2.2",
+    "jsdom": "^11.2.0",
     "marked": "^0.3.6",
-    "nunjucks": "^3.0.1"
+    "nunjucks": "^3.0.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {},
   "scripts": {
