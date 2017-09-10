@@ -3,6 +3,8 @@ const rename = require('gulp-rename');
 const nunjucks = require('gulp-nunjucks-html');
 const contentful = require('../components/contentful/contentfulAPI');
 const constants = require('../config/constants')
+const random = require('../components/sql/sql-random')
+const connect = require('../components/sql/connect')
 
 const addExtras = (object, extras) => {
   let newObject = Object.assign({}, object, )
@@ -15,6 +17,7 @@ exports.buildPostPages = () => {
         for (let i = 0; i < data.items.length; i++) {
             var incompletePost = {};
             incompletePost = contentful.extractPostInfo(data.items[i]);
+            connect.doQuery(connect.pool, random.addPost, [incompletePost.slug])
             var post = Object.assign({}, incompletePost, constants)
             gulp.src('./templates/post.njk')
                 .pipe(nunjucks({
@@ -25,6 +28,7 @@ exports.buildPostPages = () => {
                 .pipe(rename(`${post.slug}.html`))
                 .pipe(gulp.dest('./build/posts'));
         }
+        return 1;
     }).catch(function (err) {
         console.log(err);
     })

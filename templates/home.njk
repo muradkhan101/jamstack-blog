@@ -21,7 +21,7 @@
             <div class="home-masonry-grid">
                 {% if posts %}
                     {% for post in posts %}
-                       {{ macro.makePostSummary(post) }}
+                       {{ macro.makePostSummary(post, baseURL) }}
                     {% endfor %}
                 {% else %}
                 <h3>Sorry, no posts were found :(</h3>

@@ -5,9 +5,9 @@
     {% endfor %}
 {% endmacro %}
 
-{% macro makePostSummary(post) %}
-    <a class="grid-item post-link" href="posts/{{link}}">
-        <div class="post cover-image" style="background-image: url('https://source.unsplash.com/featured/?{{ category[0] }}');">
+{% macro makePostSummary(post, baseURL) %}
+    <a class="grid-item post-link" href="{{baseURL}/posts/{{post.link}}">
+        <div class="post cover-image" style="background-image: url('https://source.unsplash.com/featured/?{{ categories[0] }}');">
             <div class="post-title">
                 <h3>{{ post.title }}</h3>
             </div>
@@ -31,6 +31,6 @@
 {% endmacro %}
 
 {% macro importJS() %}
-    <script src='../resources/js/masonry.min.js'></script>
-    <script src='../resources/js/main.js'></script>
+    <script src='/resources/js/masonry.min.js'></script>
+    <script src='/resources/js/main.js'></script>
 {% endmacro %}

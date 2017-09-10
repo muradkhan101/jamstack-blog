@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
-  <title> Categories - {{blogname}} </title>
+  <title> Search - {{blogname}} </title>
 
   <meta name="description" content="A blog about just about anything (but mostly programming">
   <meta name="keywords" content="data science, programming, front-end, back-end, html, css, javascript, js">
@@ -19,7 +19,14 @@
 <div class="spacer-image parallax" style="background-image: url('https://source.unsplash.com/random/daily');" value="0.3"></div>
 <main class="parallax background-square-full" value="0.3">
     <div class="main-container flex-row">
-          <div id="react-container" class='card article-container'></div>
+          <div class='card article-container'>
+            <div class='home-masonry-grid'>
+              <div class='grid-sizer'></div>
+              {% for post in posts %}
+                {{ macro.makePostSummary(post, baseURL)}}
+              {% endfor %}
+            </div>
+          </div>
         {% include "./newsletter-signup/signup-sidebar.njk" %}
     </div>
     <div id="mobile-info-bar">
