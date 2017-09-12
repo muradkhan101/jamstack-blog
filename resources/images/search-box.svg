@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 242.4 46.7" enable-background="new 0 0 242.4 46.7" xml:space="preserve">
+<g id="box">
+	<path fill="#EFEFEF" d="M238.9,18H134.8L121.2,0l-13.6,18H3.5C1.6,18,0,19.6,0,21.5v21.7c0,1.9,1.6,3.5,3.5,3.5h235.4
+		c1.9,0,3.5-1.6,3.5-3.5V21.5C242.4,19.6,240.8,18,238.9,18z"/>
+</g>
+<g id="magnifying">
+	<g>
+
+			<rect x="4.8" y="37.5" transform="matrix(0.4597 -0.8881 0.8881 0.4597 -29.2891 29.5604)" fill="#313131" width="9.7" height="2.8"/>
+
+			<ellipse transform="matrix(0.4597 -0.8881 0.8881 0.4597 -18.131 28.8367)" fill="#313131" cx="14.6" cy="29.3" rx="6.4" ry="6.4"/>
+
+			<ellipse transform="matrix(0.4597 -0.8881 0.8881 0.4597 -18.131 28.8367)" fill="#9E9E9E" cx="14.6" cy="29.3" rx="4.5" ry="4.5"/>
+	</g>
+</g>
+<g id="line">
+	<line fill="none" stroke="#313131" stroke-miterlimit="10" x1="29.6" y1="40.9" x2="230.5" y2="40.9"/>
+</g>
+</svg>

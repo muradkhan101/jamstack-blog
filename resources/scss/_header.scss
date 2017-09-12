@@ -220,5 +220,11 @@ nav {
   justify-content: space-between;
   transition: top 0.25s $bezier;
 }
+.site-name {
+  margin-left: 1em;
+  font-size: 1.5em;
+  font-family: $monospace;
+  font-weight: 600;
+}
 .nav-shown {top: 0;}
 .nav-hidden {top: -5em;}

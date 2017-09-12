@@ -4,7 +4,7 @@
 
 {% import "macros.njk" as macro %}
 
-<main style="overflow: hidden;">
+<main style="overflow: hidden;" class="parallax background-star-full" value="0.3">
     <!-- For front page, have pictures with hover effects like in Projects of current site
      Post title in top, excerpt in bottom. JS function to cut excerpt w/ ... to fit in
      Placement of image in recent Articles section could be positioned w/ sin function
@@ -19,6 +19,7 @@
                 <h1> Recent Articles </h1>
             </div>
             <div class="home-masonry-grid">
+            <div class='grid-sizer'></div>
                 {% if posts %}
                     {% for post in posts %}
                        {{ macro.makePostSummary(post, baseURL) }}

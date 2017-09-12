@@ -4,7 +4,7 @@
         <div id="footer-links">
             <div class="site-links">
                 <nav id='footer-navigation'>
-                    {{ macro.navMenu(navigation, 'flex-col') }}
+                    {{ macro.navMenu(footerNav, 'flex-col') }}
                 </nav>
             </div>
             <div class="social-links">
@@ -38,5 +38,6 @@
         });
     </script>
     {{ macro.importJS()}}
+    {% include 'search-bar.njk' %}
 </footer>
 </body>

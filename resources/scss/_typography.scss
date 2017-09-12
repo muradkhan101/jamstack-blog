@@ -44,6 +44,7 @@ p, blockquote, article {
 code {
   font-family: $monospace;
   line-height: 1.45;
+  p {font-family: $monospace;}
 }
 .indent-text {
   padding-left: 10px;

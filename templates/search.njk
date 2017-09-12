@@ -2,15 +2,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
-  <title> Search - {{blogname}} </title>
-
+  <title> Search - {{ blogname }} </title>
   <meta name="description" content="A blog about just about anything (but mostly programming">
   <meta name="keywords" content="data science, programming, front-end, back-end, html, css, javascript, js">
   <link rel="stylesheet" href="/resources/css/base.css">
   <link rel="shortcut icon" href="/resources/images/favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,700|Lora|Ubuntu+Mono:400,400i" rel="stylesheet">
 </head>
-
 
 {% import "macros.njk" as macro %}
 
@@ -22,9 +20,13 @@
           <div class='card article-container'>
             <div class='home-masonry-grid'>
               <div class='grid-sizer'></div>
-              {% for post in posts %}
-                {{ macro.makePostSummary(post, baseURL)}}
-              {% endfor %}
+              {% if posts | length > 0 %}
+                {% for post in posts %}
+                  {{ macro.makePostSummary(post, baseURL) }}
+                {% endfor %}
+              {% else %}
+                <h2> Sorry, no posts were found :( </h2>
+              {% endif %}
             </div>
           </div>
         {% include "./newsletter-signup/signup-sidebar.njk" %}

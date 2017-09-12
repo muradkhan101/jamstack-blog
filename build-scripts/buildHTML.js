@@ -37,7 +37,7 @@ exports.buildPostPages = () => {
 exports.buildHomePage = () => {
     contentful.getRecentPosts(10)
         .then(function(incompletePosts) {
-            var posts = Object.assign({}, incompletePosts, constants);
+            var posts = Object.assign({}, {posts: incompletePosts}, constants);
             gulp.src('./templates/home.njk')
                 .pipe(nunjucks({
                     searchPaths: ['./templates'],
