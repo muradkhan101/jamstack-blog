@@ -55,10 +55,10 @@
   flex-direction: column;
 }
 .main-container {
-  margin-bottom: 150px;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1600px;
+  margin-bottom: 150px;
 }
 .container {
   flex-grow: 5;
@@ -67,15 +67,16 @@
 #content-container {
   margin: 0 auto;
   padding: 2em 1em;
-  width: calc(65% - #{2*$margin-for-calc});
+  width: calc(60% - #{2*$margin-for-calc});
   border-radius: 2px;
   box-shadow: $drop-shadow-small;
   background: $eggwhite;
 }
 #mobile-info-bar {
-  margin: 50px 12px 0;
+  margin: 50px 12px 24px;
   display: none;
   border: 4px solid $skyblue;
+  padding: $padding;
   .social-links {
     justify-content: start;
     margin-bottom: 1em;

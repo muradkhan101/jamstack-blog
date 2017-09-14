@@ -29,3 +29,24 @@ footer nav {
   max-width: 700px;
   justify-content: space-between;
 }
+
+@media (max-width: 560px) {
+  #footer-content{
+    padding: 50px 20px;
+    #footer-links {
+      border-right: none;
+      border-bottom: 2px solid $skyblue;
+      padding-bottom: 0.5em;
+      padding-right: 0;
+      justify-content: center;
+      .site-links {width: 100%;}
+      ul {width: 100%; justify-content: space-around;}
+    }
+    #footer-text {
+      padding-left: 0;
+      margin-top: 0.75em;
+      width: 100%;
+      text-align: justify;
+    }
+  }
+}

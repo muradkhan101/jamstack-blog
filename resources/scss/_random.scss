@@ -132,3 +132,15 @@ div.focus-border {
 		&:hover::after, &:focus::after {transition-delay: 0s;}
 	}
 }
+.flex-row-to-col {
+  display: flex;
+  flex-direction: row;
+}
+.flex-col-to-row {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 560px) {
+  .flex-row-to-col {flex-direction: column;}
+  .flex-col-to-row {flex-direction: row;}
+}

@@ -1,10 +1,10 @@
 {% import "macros.njk" as macro %}
 <footer>
-    <div class="flex-row background-triangle-bare parallax" id="footer-content">
+    <div class="flex-row-to-col background-triangle-bare parallax" id="footer-content">
         <div id="footer-links">
             <div class="site-links">
                 <nav id='footer-navigation'>
-                    {{ macro.navMenu(footerNav, 'flex-col') }}
+                    {{ macro.navMenu(footerNav, 'flex-col-to-row') }}
                 </nav>
             </div>
             <div class="social-links">
