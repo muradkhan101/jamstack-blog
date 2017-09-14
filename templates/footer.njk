@@ -8,7 +8,7 @@
                 </nav>
             </div>
             <div class="social-links">
-               {# {{ macro.makeSocialMediaLinks(socialMedia) }} #}
+                {{ macro.makeSocialMediaLinks(author.socialMedia) }}
             </div>
         </div>
         <div id="footer-text" class="flex-col">
@@ -31,10 +31,6 @@
             var button = event.target;
             button.classList.toggle('hover');
           });
-          e.addEventListener('click', (event) => {
-            event.preventDefault();
-            e.firstElementChild.click();
-          })
         });
     </script>
     {{ macro.importJS()}}

@@ -136,6 +136,9 @@ StickyAppear.prototype.updatePosition = function () {
     var currentPoint = pageY + windowH;
     var startPoint = this.element.offsetTop - windowH/2 + 25;
     var endPoint = this.parent.offsetTop + windowH/2;
+
+    var moveX = window.innerWidth/2 + sidebarContainer.clientWidth + 20;
+
     if (pageY > this.parent.offsetTop) { //&& pageY < document.querySelector('footer').offsetTop - sidebarContainer.clientHeight - this.element.clientHeight - 20) {
         let navHeight = document.getElementById('nav-bar') ? document.getElementById('nav-bar').clientHeight : 0;
         this.element.style.top = `${Math.min(Math.round(pageY-this.parent.offsetTop), 20 + navHeight)}px`;
@@ -147,7 +150,7 @@ StickyAppear.prototype.updatePosition = function () {
         this.element.style.position = 'relative';
         sidebarContainer.style.top = '0px';
         this.element.style.top = '0px';
-        this.element.style.transform = `translateX(${this.side}${Math.max(Math.round((currentPoint - endPoint)/(startPoint - endPoint)*100), 0)}%)`;
+        this.element.style.transform = `translateX(${this.side}${Math.max(Math.round((currentPoint - endPoint)/(startPoint - endPoint)*moveX), 0)}px)`;
         sidebarContainer.style.top = `${this.element.offsetTop-pageY+this.element.offsetHeight}px`;
         if (this.parent.classList.contains('is-sticky')) this.parent.classList.remove('is-sticky');
         if (this.parent.classList.contains('hoverable')) this.parent.classList.remove('hoverable');

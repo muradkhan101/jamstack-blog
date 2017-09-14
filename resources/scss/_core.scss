@@ -57,6 +57,7 @@ main {
 
 .author-name {
   padding: $padding;
+  h3 {margin-bottom: none;}
 }
 .author-biography {
   padding: $padding;
@@ -106,7 +107,7 @@ code {
   li {list-style: none;}
 }
 
-.file-name {margin-bottom: 4px;}
+.file-name {margin-bottom: 4px; font-family: $monospace; font-weight: bold; border-top: 2px solid $skyblue}
 .class {color: #f78018;}
 .obj {color: #d238ea;}
 .var { color: $softred; }

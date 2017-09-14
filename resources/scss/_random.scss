@@ -5,6 +5,7 @@
   background-color: rgba(0, 171, 224, 0.6);
   color: $eggwhite;
   border-radius: 2px;
+  text-align: center;
   h1, h2, h3, p, article {line-height: 1; margin: 0;}
 }
 
@@ -42,7 +43,7 @@
   &::before {
     content:'';
     position: absolute;
-    height: 5000px;
+    height: 12000px;
     left: 50%;
     top: 0px;
     width: 2px;
@@ -55,7 +56,7 @@
     height: 2px;
     left: 50%;
     top: 0px;
-    width: 250px;
+    width: 1000px;
     z-index: -1000;
     background: $softred;
   }
@@ -67,7 +68,7 @@
   &::before {
     content:'';
     position: absolute;
-    height: 5000px;
+    height: 12000px;
     left: 50%;
     top: 0px;
     width: 2px;

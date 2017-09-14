@@ -4,12 +4,15 @@
   width: calc(30% - #{2*$margin-for-calc});
   order: 3;
   height: 100%;
+  max-width: $sidebar-width;
   .sidebar-container {
     &:hover {transform: translateX(0);}
+    max-width: $sidebar-width;
     top: 45px;
     position: relative;
     transition: transform 0.5s $bezier;
   }
+  .sidebar-title {max-width: $sidebar-width;}
 }
 .sidebar-right {
   width: calc(30% - #{2*$margin-for-calc});
@@ -24,15 +27,17 @@
 .sidebar-left {
   order: -1;
   margin-right: 10px;
-  .sidebar-title {background: $softerred; text-align: center;}
+  max-width: $sidebar-width-small;
+  .sidebar-title {background: $softerred; text-align: center; max-width: $sidebar-width-small;}
   .sidebar-container, .sidebar-title {
     transform: translateX(-120%);
     background-color: $softerred;
+    max-width: $sidebar-width-small;
   }
 }
 .sidebar-title {
   h4 {margin-bottom: 0;}
-  padding-left: 6px;
+  padding: 0.5em 6px;
 }
 #author-info-bar {
   width: calc(25% - #{2*$margin-for-calc});

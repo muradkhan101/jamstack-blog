@@ -7,7 +7,7 @@
 
 {% macro makePostSummary(post, baseURL) %}
     <a class="grid-item post-link" href="{{baseURL}}/posts/{{post.slug}}">
-        <div class="post cover-image" style="background-image: url('https://source.unsplash.com/weekly?{{tags[1]}}');">
+        <div class="post cover-image" style="background-image: url('https://source.unsplash.com/weekly?{{post.tags[1]}}');">
             <div class="post-title">
                 <h3>{{post.title}}</h3>
             </div>
@@ -24,10 +24,6 @@
             <img src='{{site.icon}}' class='social-media-img' alt="Link to my {{site.name}}"></img>
         </a>
     {% endfor %}
-{% endmacro %}
-
-{% macro makeUnsplashImage() %}
-
 {% endmacro %}
 
 {% macro importJS() %}

@@ -57,6 +57,8 @@
 .main-container {
   margin-bottom: 150px;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1600px;
 }
 .container {
   flex-grow: 5;
@@ -94,4 +96,8 @@
   .sidebar {display: none;}
   #mobile-info-bar {display: block;}
   .main-container {display: flex; flex-direction: column;}
+  .grid-sizer, .grid-item {width: calc(100%/2 - 12px)}
+}
+@media (max-width: 500px) {
+  .grid-sizer, .grid-item {width: calc(100% - 20px)}
 }

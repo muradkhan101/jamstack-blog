@@ -14,30 +14,30 @@
      Parallax on blog title so it touches nav bar as it leaves the screen, JS function -->
     <div class="main-container">
         <div class="flex-row">
-        <div class="card article-container">
+          <div class="card article-container">
             <div class="card-title">
                 <h1> Recent Articles </h1>
             </div>
             <div class="home-masonry-grid">
-            <div class='grid-sizer'></div>
-                {% if posts %}
-                    {% for post in posts %}
-                       {{ macro.makePostSummary(post, baseURL) }}
-                    {% endfor %}
-                {% else %}
+              <div class='grid-sizer'></div>
+              {% if posts %}
+                  {% for post in posts %}
+                     {{ macro.makePostSummary(post, baseURL) }}
+                  {% endfor %}
+              {% else %}
                 <h3>Sorry, no posts were found :(</h3>
-                {% endif %}
+              {% endif %}
             </div>
-        </div>
-           {% include "./newsletter-signup/signup-sidebar.njk" %}
-        </div>
-        <div id="mobile-info-bar">
-          <div class="flex-col">
-            <h4>Join the Mailing List!</h4>
-            {% include "./newsletter-signup/signup-module.njk" %}
           </div>
+           {% include "./newsletter-signup/signup-sidebar.njk" %}
+      </div>
+      <div id="mobile-info-bar" class="card">
+        <div class="flex-col">
+          <h4 class="card-title">Join the Mailing List!</h4>
+          {% include "./newsletter-signup/signup-module.njk" %}
         </div>
-    </div>
+      </div>
+  </div>
 </main>
 </body>
 {% include "footer.njk" %}
