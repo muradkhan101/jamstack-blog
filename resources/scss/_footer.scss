@@ -39,8 +39,9 @@ footer nav {
       padding-bottom: 0.5em;
       padding-right: 0;
       justify-content: center;
-      .site-links {width: 100%;}
-      ul {width: 100%; justify-content: space-around;}
+      .site-links, .social-links, ul {width: 100%;}
+      ul {justify-content: space-around;}
+      .social-links {justify-content: center;}
     }
     #footer-text {
       padding-left: 0;

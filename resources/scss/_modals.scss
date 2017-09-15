@@ -1,6 +1,6 @@
 // MB10 - modals.scss
 
-#modal-container {
+.modal-container {
 	h3 {margin-bottom: 0.6em;}
 	z-index: 100;
 	position: fixed;
@@ -15,7 +15,7 @@
 	justify-content: center;
 	flex-direction: row;
 }
-#modal {
+.modal {
 	z-index: 1;
 	transition: left 1s $bezier, right 1s $bezier;
 	position: relative;
@@ -30,7 +30,7 @@
 	background-color: #252525;
 	color: white;
 }
-#close-form {
+.close-form {
 	position: absolute;
 	right: 2.5%;
 	top: 1%;
@@ -44,7 +44,7 @@
 	}
 }
 @media (max-width: 800px), (min-device-pixel-ratio: 2) {
-	#modal {
+	.modal {
 		padding: 30px 20px;
 		height: initial;
 		width: 95%;
@@ -53,21 +53,20 @@
 }
 .modal-title, .modal-body {color: $eggwhite;}
 
-#search-svg {
-	position: absolute;
-	height: 4em;
-	display: none;
-	z-index: 1000;
-	max-width: 90%;
-}
+
 #search-input {
 	color: $charcoal;
 	background: transparent;
 	position: relative;
 	width: 83%;
-	left: 12%;
-	margin-top: 12%;
+	transition: border-bottom 0.5s $bezier;
+	border-bottom: 2px solid $skyblue;
 	&:focus {
+		border-bottom: 2px solid $softred;
 		box-shadow: none;
 	}
+}
+#search-bar {
+	display: flex;
+	flex-wrap: wrap;
 }
