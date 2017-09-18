@@ -50,7 +50,7 @@ const createPrerenderHtml = (dom, html, preloadedState) => {
   document.querySelector('body').appendChild(jsdom.fragment(`<script>
       window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
     </script>
-    <script src='../resources/js/categories.js'></script>`));
+    <script src='/resources/js/categories.js'></script>`));
   dom.window.document = document;
   return dom.serialize();
 };
