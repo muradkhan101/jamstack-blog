@@ -20,7 +20,7 @@
   margin-left: 10px;
   .sidebar-title {background: $lightblue;}
   .sidebar-container, .sidebar-title {
-    transform: translateX(120%);
+    transform: translateX(220%);
     background-color: $lightblue;
   }
 }
@@ -30,7 +30,7 @@
   max-width: $sidebar-width-small;
   .sidebar-title {background: $softerred; text-align: center; max-width: $sidebar-width-small;}
   .sidebar-container, .sidebar-title {
-    transform: translateX(-120%);
+    transform: translateX(-220%);
     background-color: $softerred;
     max-width: $sidebar-width-small;
   }
