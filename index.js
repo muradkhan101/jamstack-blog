@@ -6,4 +6,4 @@ connect.doQuery(connect.connection, random.clearTable).then(() => {
   build.buildPostPages();
   build.buildHomePage();
   build.buildCategoryPage();
-});
+}).catch(err => console.log(err));
